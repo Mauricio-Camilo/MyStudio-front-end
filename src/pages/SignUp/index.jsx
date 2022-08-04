@@ -1,9 +1,10 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import styled from "styled-components";
 import { ThreeDots } from 'react-loader-spinner';
 
 import { makeSignUp } from "../../services/api";
+
+import { Container, Title, Inputs, Input, Button, Hiperlink} from "./style"
 
 function SignUp() {
 
@@ -77,46 +78,4 @@ function SignUp() {
     )
 }
 
-const Container = styled.div`
-    width: 375px;
-`
-const Title = styled.h1`
-    /* font-family: 'Saira Stencil One', cursive;  */
-    font-size: 32px;
-    text-align: center;
-    color: black;
-    margin-top: 159px;
-    margin-bottom: 24px;
-`
-const Inputs = styled.div`
-    display: flex;
-    flex-direction: column;
-    gap: 13px;
-    padding-left: 25px;
-`
-const Input = styled.input`
-        width: 326px;
-        height: 58px;
-        border-radius: 5px;
-        padding-left: 15px;
-`
-const Button = styled.button`
-    font-size: 20px;
-    font-weight: 700;
-    color: #FFFFFF;
-    width: 326px;
-    height: 46px;
-    border-radius: 5px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: blue;
-`
-const Hiperlink = styled.p`
-    font-size: 15px;
-    font-weight: 700;
-    text-align: center;
-    color: black;
-    margin-top: 36px;
-`
 export default SignUp;
