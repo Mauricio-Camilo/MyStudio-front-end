@@ -116,7 +116,7 @@ const Hiperlink = styled.p`
     font-size: 15px;
     font-weight: 700;
     text-align: center;
-    color: #FFFFFF;
+    color: black;
     margin-top: 36px;
 `
 export default SignUp;
