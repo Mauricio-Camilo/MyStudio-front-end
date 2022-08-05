@@ -17,7 +17,7 @@ function Login () {
 
     const [login, setLogin] = useState("Entrar");
 
-    const { setUser } = useContext(UserContext);
+    const { setToken } = useContext(UserContext);
 
     async function handleLogin (event) {
         event.preventDefault();
@@ -30,12 +30,13 @@ function Login () {
             })  
             const token = response.data
             localStorage.setItem("token", token); 
-            setUser(token); 
+            setToken(token); 
             navigate("/main");
         }
 
         catch {
             alert("Preencha os dados corretamente");
+            eraseInputs();
             setLogin("Entrar");
         }
     }

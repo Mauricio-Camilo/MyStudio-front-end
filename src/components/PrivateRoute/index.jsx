@@ -3,9 +3,9 @@ import { Navigate } from "react-router-dom";
 import { UserContext } from "../../contexts/userContext";
 
 const PrivateRoute = ({ children }) => {
-    const {user} = useContext(UserContext);
+    const {token} = useContext(UserContext);
 
-    if (!user) {
+    if (!token) {
         alert("Você será redirecionado.");
         return <Navigate to="/" />;
       }
