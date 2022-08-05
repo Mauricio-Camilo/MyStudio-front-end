@@ -17,8 +17,6 @@ function SignUp() {
 
     const [signUp, setSignUp] = useState("Cadastrar");
 
-    const URL = "http://localhost:5000/signup";
-
     const navigate = useNavigate();
 
     async function handleSignUp(event) {

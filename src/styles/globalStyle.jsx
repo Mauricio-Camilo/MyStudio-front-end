@@ -58,14 +58,12 @@ strong {
   --color-1: blue;
   --color-2: red;
   --color-3: green;
+  --width-mobile: 375px;
 
 }
 
 body {
     background-color: var(--color-0);
 }
-
-
 `
-
 export default GlobalStyle;
