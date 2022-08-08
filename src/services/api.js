@@ -1,8 +1,8 @@
 import axios from "axios";
 
 export const api = axios.create({
-    // baseURL: "https://mauricio-mystudio.herokuapp.com" //deploy
-    baseURL: "http://localhost:5000"
+    baseURL: "https://mauricio-mystudio.herokuapp.com" //deploy
+    // baseURL: "http://localhost:5000"
   });
 
   export const makeSignUp = async (formData) => {
