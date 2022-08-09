@@ -1,6 +1,6 @@
 import { useContext, useState } from "react";
 import { UserContext } from "../../contexts/userContext";
-
+import Header from "../../components/Header";
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 import { postClient } from "../../services/api";
@@ -73,6 +73,7 @@ function InsertClientPage() {
 
     return (
         <>
+            <Header />
             <Container>
                 <Title>Cadastre seu novo aluno</Title>
                 
@@ -108,7 +109,7 @@ const Container = styled.div`
     flex-direction: column;
     align-items: center;
     background-color: blue;
-    padding-top: 10px;
+    margin-top: var(--height-header);
     padding-bottom: 25px;
 `
 
