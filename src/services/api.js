@@ -1,8 +1,8 @@
 import axios from "axios";
 
 export const api = axios.create({
-    baseURL: "https://mauricio-mystudio.herokuapp.com" //deploy
-    // baseURL: "http://localhost:5000"
+    // baseURL: "https://mauricio-mystudio.herokuapp.com" 
+    baseURL: "http://localhost:5000"
   });
 
   export const makeSignUp = async (formData) => {
@@ -16,4 +16,13 @@ export const api = axios.create({
 
   export const postClient = async (formData, config) => {
     await api.post("/clients", formData, config);
+  }
+
+  export const getAllClients = async (config) => {
+    const clients = await api.get("/clients", config);
+    return clients;
+  }
+
+  export const deleteClientById = async (id) => {
+    await api.delete(`/clients/${id}`);
   }

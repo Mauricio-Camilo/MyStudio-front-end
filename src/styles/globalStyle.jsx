@@ -59,6 +59,7 @@ strong {
   --color-2: red;
   --color-3: green;
   --width-mobile: 375px;
+  --height-header: 75px;
 
 }
 
