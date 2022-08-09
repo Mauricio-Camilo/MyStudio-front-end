@@ -103,6 +103,8 @@ function InsertClientPage() {
     )
 }
 
+// README: SEPARAR OS ESTILOS EM OUTRO ARQUIVO.
+
 const Container = styled.div`
     width: var(--width-mobile);
     display: flex;

@@ -4,28 +4,35 @@ import { deleteClientById } from "../../services/api";
 function ClientData(props) {
     const { id, name, startDate, finishDate, payment, notification } = props;
 
-    function deleteClient (id) {
-        console.log(`Vou deletar o aluno de id ${id}`);
-        const checkDelete = window.confirm("Deseja deletar o cadastro desse aluno?");
-        if (checkDelete) {
-            alert ("O aluno será apagado");
-            deleteClientById(id);
-            window.location.reload();
-        }
-    }
-
-    return (
-        <SubContainer key={id}>
+    function handleClient() {
+        return (
             <div>
                 <h2><strong>Nome:</strong>{name}</h2>
                 <h2><strong>Plano contradado:</strong>{payment}</h2>
                 <h2><strong>Inicio do plano:</strong>{startDate}</h2>
                 <h2><strong>Término do plano:</strong>{finishDate}</h2>
             </div>
+        )
+    }
+
+    function deleteClient(id) {
+        console.log(`Vou deletar o aluno de id ${id}`);
+        const checkDelete = window.confirm("Deseja deletar o cadastro desse aluno?");
+        if (checkDelete) {
+            alert("O aluno será apagado");
+            deleteClientById(id);
+            window.location.reload();
+        }
+    }
+
+    // README: CRIAR O HANDLER PRA RENDERIZAR OS DADOS DO USUÁRIO
+
+    return (
+        <SubContainer key={id}>
+            {handleClient()}
             <Notification onClick={() => console.log(`Cliquei no botão ${id}`)}>N</Notification>
             <Delete onClick={() => deleteClient(id)}>X</Delete>
             <Update>U</Update>
-
         </SubContainer>
     )
 }

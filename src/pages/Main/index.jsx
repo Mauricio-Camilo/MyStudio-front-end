@@ -67,6 +67,8 @@ function MainPage() {
     )
 }
 
+// README: COLOCAR OS COMPONENTES EM UM ARQUIVO SEPARADO    
+
 const Container = styled.div`
     width: var(--width-mobile);
     display: flex;
@@ -84,18 +86,4 @@ const Title = styled.h1`
     margin-top: 15px;
     margin-bottom: 24px;
 `
-
-const SubContainer = styled.div`
-    width: 350px;
-    background-color: red;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    padding: 10px 0;
-
-        h2 {
-            font-size: 20px;
-        }
-`
-
 export default MainPage;
