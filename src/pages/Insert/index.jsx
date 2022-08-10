@@ -41,13 +41,13 @@ function InsertClientPage() {
     }
 
     async function createClient() {
-        setSelected(true);
-        setSignUp(loading);
         if ([...selectedPayment.keys()][0] === undefined) {
             alert("Selecione um plano antes de prosseguir com o cadastro");
-            setSignUp("Cadastrar");
         }
         else {
+            setSelected(true);
+            setSignUp(loading);
+
             try {
                 const client = {
                     name,
