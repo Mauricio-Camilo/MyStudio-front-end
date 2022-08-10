@@ -1,12 +1,10 @@
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
-import { deleteClientById } from "../../services/api";
+import { deleteClientById } from "./../../services/api";
 
 function ClientData(props) {
 
     const { id, name, startDate, finishDate, payment, notification, daysLeft } = props;
-
-    console.log(daysLeft);
 
     const navigate = useNavigate();
 
@@ -22,7 +20,6 @@ function ClientData(props) {
     }
 
     function deleteClient(id) {
-        console.log(`Vou deletar o aluno de id ${id}`);
         const checkDelete = window.confirm("Deseja deletar o cadastro desse aluno?");
         if (checkDelete) {
             alert("O aluno será apagado");
