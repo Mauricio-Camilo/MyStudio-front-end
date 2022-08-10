@@ -27,7 +27,7 @@ function MainPage() {
         async function getUserPostsById() {
             try {
                 const clients = await getAllClients(config);
-                console.log(clients)
+                console.log(clients.data)
                 setClients(clients.data);
                 setPostClients(false);
                 setReloadPage(true);
@@ -44,11 +44,11 @@ function MainPage() {
         return reloadPage?
          (
                 clients.map(client => {
-                    const { id, name, payments, startDate, finishDate, notification } = client;
+                    const { id, name, payments, startDate, finishDate, notification, daysLeft } = client;
                     return (
                           <ClientData key={id} id={id} name={name} startDate={startDate}
-                                finishDate={finishDate} payment={payments.period}
-                                notification={notification} />
+                                finishDate={finishDate} payment={payments.period} 
+                                notification={notification} daysLeft={daysLeft}/>
                     )
                 })
         ):
@@ -74,7 +74,8 @@ const Container = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: green;
+    background-color: pink;
+    gap: 25px;
     margin-top: var(--height-header);
 `
 

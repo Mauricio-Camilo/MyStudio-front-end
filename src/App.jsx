@@ -4,7 +4,8 @@ import PrivateRoute from "./components/PrivateRoute";
 import Login from "./pages/Login";
 import SignUp from "./pages/SignUp";
 import Main from "./pages/Main";
-import InsertClientPage from "./pages/Insert"
+import InsertClientPage from "./pages/Insert";
+import UpdateClientPage from "./pages/Update";
 
 import GlobalStyle from "./styles/globalStyle.jsx";
 import { UserProvider } from "./contexts/userContext";
@@ -28,6 +29,11 @@ function App() {
                          <Route path="/insert" element={
                             <PrivateRoute>
                                 <InsertClientPage />
+                            </PrivateRoute>
+                        }/>
+                        <Route path="/update/:clientId" element={
+                            <PrivateRoute>
+                                <UpdateClientPage />
                             </PrivateRoute>
                         }/>
                     </Routes>

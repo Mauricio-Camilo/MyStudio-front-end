@@ -1,29 +1,22 @@
-import { useContext, useState } from "react";
-import { UserContext } from "../../contexts/userContext";
+import { useState } from "react";
 import Header from "../../components/Header";
-import { useNavigate } from "react-router-dom";
-import { postClient } from "../../services/api";
-
-import { Container, Title, Inputs, Input, PaymentSection, Payment, Button, } from "./style"
+import { useNavigate, useParams } from "react-router-dom";
+import { updateClientById } from "../../services/api";
 
 import { ThreeDots } from 'react-loader-spinner';
 
-function InsertClientPage() {
-    
-    const { token } = useContext(UserContext);
+import { Container, Title, Inputs, Input, PaymentSection, Payment, Button, } from "./../Insert/style"
 
-    const config = {
-        headers: {
-            "Authorization": `Bearer ${token}`,
-        }
-    }
+function UpdateClientPage() {
+    
+    const {clientId} = useParams();
 
     const loading = <ThreeDots color="#FFFFFF" />;
 
     const [name, setName] = useState("");
     const [date, setDate] = useState("");
     const [selected, setSelected] = useState (false);
-    const [signUp, setSignUp] = useState("Cadastrar");
+    const [signUp, setSignUp] = useState("Atualizar");
     const [selectedPayment, setSelectedPayment] = useState(new Map());
 
     const navigate = useNavigate();
@@ -40,26 +33,23 @@ function InsertClientPage() {
         }
     }
 
-    async function createClient () {
+    async function updateClient () {
         setSelected(true);
         setSignUp(loading);
-        if ([...selectedPayment.keys()][0] === undefined) {
-            alert("Selecione um plano antes de prosseguir com o cadastro")
-        }
-
         try {
             const client = {
                 name,
                 payment: [...selectedPayment.keys()][0],
                 startDate: date
             };
-            await postClient(client, config);
+            await updateClientById(client, clientId);
             navigate("/main");          
         } 
         
         catch (error) {
             setSelected(false);
             setSignUp("Cadastrar");
+
             alert("Ocorreu um erro ao finalizar o cadastro do aluno")
         }
     }
@@ -75,7 +65,7 @@ function InsertClientPage() {
         <>
             <Header />
             <Container>
-                <Title>Cadastre seu novo aluno</Title>
+                <Title>Atualize os dados do aluno</Title>
                 
                 <Inputs>
                     <Input type="text" placeholder="Nome"
@@ -97,10 +87,10 @@ function InsertClientPage() {
                         )
                     })}
                 </PaymentSection>
-                <Button selected={selected} onClick={() => createClient()}>{signUp}</Button>
+                <Button selected={selected} onClick={() => updateClient()}>{signUp}</Button>
             </Container>
         </>
     )
 }
 
-export default InsertClientPage;
+export default UpdateClientPage;
