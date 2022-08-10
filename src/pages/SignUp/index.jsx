@@ -25,31 +25,20 @@ function SignUp() {
         setSignUp(loading);
 
         try {
-
             await makeSignUp({
                 name,
                 cpf,
                 password,
                 confirmPassword
             })
-           
             navigate("/")
         }
 
         catch {
             alert("Preencha os dados corretamente");
             setSignUp("Cadastrar");
-            eraseInputs();
         }
     };
-
-    function eraseInputs() {
-        setSignUp("Cadastrar")
-        setName("");
-        setCpf("");
-        setPassword("");
-        setConfirmPassword("");
-    }
 
     return (
         <Container>

@@ -36,16 +36,10 @@ function Login () {
 
         catch {
             alert("Preencha os dados corretamente");
-            eraseInputs();
             setLogin("Entrar");
         }
     }
 
-    function eraseInputs() {
-        setLogin("Entrar")
-        setCpf("");
-        setPassword("");
-    }
     return (
         <Container>
             <Title>MyStudio</Title>

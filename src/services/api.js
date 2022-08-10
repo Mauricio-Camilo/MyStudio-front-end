@@ -24,9 +24,7 @@ export const api = axios.create({
   }
 
   export const deleteClientById = async (id) => {
-    console.log("Chegou no api");
     await api.delete(`/clients/${id}`);
-    console.log("Deletou o cliente");
   }
 
   export const updateClientById = async (formData, id) => {

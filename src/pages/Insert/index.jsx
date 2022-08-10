@@ -9,7 +9,7 @@ import { Container, Title, Inputs, Input, PaymentSection, Payment, Button, } fro
 import { ThreeDots } from 'react-loader-spinner';
 
 function InsertClientPage() {
-    
+
     const { token } = useContext(UserContext);
 
     const config = {
@@ -22,13 +22,13 @@ function InsertClientPage() {
 
     const [name, setName] = useState("");
     const [date, setDate] = useState("");
-    const [selected, setSelected] = useState (false);
+    const [selected, setSelected] = useState(false);
     const [signUp, setSignUp] = useState("Cadastrar");
     const [selectedPayment, setSelectedPayment] = useState(new Map());
 
     const navigate = useNavigate();
 
-    function activatePayment (option) {
+    function activatePayment(option) {
         const alreadySelected = selectedPayment.has(option);
         if (alreadySelected) {
             selectedPayment.delete(option);
@@ -40,62 +40,72 @@ function InsertClientPage() {
         }
     }
 
-    async function createClient () {
+    async function createClient() {
         setSelected(true);
         setSignUp(loading);
         if ([...selectedPayment.keys()][0] === undefined) {
             alert("Selecione um plano antes de prosseguir com o cadastro")
         }
-
-        try {
-            const client = {
-                name,
-                payment: [...selectedPayment.keys()][0],
-                startDate: date
-            };
-            await postClient(client, config);
-            navigate("/main");          
-        } 
-        
-        catch (error) {
-            setSelected(false);
-            setSignUp("Cadastrar");
-            alert("Ocorreu um erro ao finalizar o cadastro do aluno")
+        else {
+            try {
+                const client = {
+                    name,
+                    payment: [...selectedPayment.keys()][0],
+                    startDate: date
+                };
+                await postClient(client, config);
+                navigate("/main");
+            }
+            catch (error) {
+                setSelected(false);
+                setSignUp("Cadastrar");
+                alert("Ocorreu um erro ao finalizar o cadastro do aluno")
+            }
         }
     }
 
-    const payments = [
-        { option: "Mensal", icon: "card-outline", id: "1" },
-        { option: "Trimestral", icon: "barcode-outline", id: "2" },
-        { option: "Semestral", icon: "cash-outline", id: "3" },
-        { option: "Anual", icon: "cash-outline", id: "4" },
-    ]
+    function handleInputs() {
+        return (
+            <Inputs>
+                <Input type="text" placeholder="Nome"
+                    onChange={(e) => setName(e.target.value)} value={name}>
+                </Input>
+                <Input type="text" placeholder="Data de início Ex:01/01/2023"
+                    onChange={(e) => setDate(e.target.value)} value={date}>
+                </Input>
+            </Inputs>
+        )
+    }
+
+    function handlePayments() {
+        const payments = [
+            { option: "Mensal", icon: "card-outline", id: "1" },
+            { option: "Trimestral", icon: "barcode-outline", id: "2" },
+            { option: "Semestral", icon: "cash-outline", id: "3" },
+            { option: "Anual", icon: "cash-outline", id: "4" },
+        ];
+        return (
+            payments.map(payment => {
+                const { option, id } = payment;
+                const checkSelectedPayment = selectedPayment.has(option)
+                return (
+                    <Payment key={id} selected={checkSelectedPayment} onClick={() => activatePayment(option)}>
+                        <p>{option}</p>
+                    </Payment>
+                )
+            })
+        )
+    }
 
     return (
         <>
             <Header />
             <Container>
                 <Title>Cadastre seu novo aluno</Title>
-                
-                <Inputs>
-                    <Input type="text" placeholder="Nome"
-                        onChange={(e) => setName(e.target.value)} value={name}>
-                    </Input>
-                    <Input type="text" placeholder="Data de início Ex:01/01/2023"
-                        onChange={(e) => setDate(e.target.value)} value={date}>
-                    </Input>
-                </Inputs>
+                {handleInputs()}
                 <Title>Escolha o plano</Title>
                 <PaymentSection>
-                    {payments.map(payment => {
-                        const { option, id } = payment;
-                        const checkSelectedPayment = selectedPayment.has(option)
-                        return (
-                            <Payment key={id} selected={checkSelectedPayment} onClick={() => activatePayment(option)}>
-                                <p>{option}</p>
-                            </Payment>
-                        )
-                    })}
+                    {handlePayments()}
                 </PaymentSection>
                 <Button selected={selected} onClick={() => createClient()}>{signUp}</Button>
             </Container>

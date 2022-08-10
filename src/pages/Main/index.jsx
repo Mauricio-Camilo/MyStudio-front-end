@@ -1,7 +1,7 @@
 import { useContext, useState, useEffect } from "react";
 import { UserContext } from "../../contexts/userContext";
-import styled from "styled-components";
 import Header from "../../components/Header";
+import { Container, Title } from "./style";
 import { getAllClients } from "../../services/api";
 import ClientData from "./clientData";
 
@@ -9,7 +9,7 @@ function MainPage() {
 
     const [postClient, setPostClients] = useState(false);
     const [clients, setClients] = useState();
-    const [reloadPage, setReloadPage] = useState();
+    const [reloadPage, setReloadPage] = useState(false);
 
     const { token } = useContext(UserContext);
 
@@ -30,7 +30,9 @@ function MainPage() {
                 console.log(clients.data)
                 setClients(clients.data);
                 setPostClients(false);
-                setReloadPage(true);
+                if (clients.data.length !== 0) {
+                    setReloadPage(true);
+                }
             }
             catch (error) {
                 console.log(error);
@@ -41,8 +43,8 @@ function MainPage() {
 
     function handleClients() {
         if (postClient) return <h1>Carregando alunos</h1>;
-        return reloadPage?
-         (
+        if (reloadPage) {
+            return (
                 clients.map(client => {
                     const { id, name, payments, startDate, finishDate, notification, daysLeft } = client;
                     return (
@@ -51,8 +53,13 @@ function MainPage() {
                                 notification={notification} daysLeft={daysLeft}/>
                     )
                 })
-        ):
-        <h5>Não há alunos cadastrados aqui</h5>
+            )
+        } else {
+            return (
+                <h1>Não há alunos cadastrados ainda!!!</h1>
+            )
+        }
+     
     }
 
     return (
@@ -67,24 +74,4 @@ function MainPage() {
     )
 }
 
-// README: COLOCAR OS COMPONENTES EM UM ARQUIVO SEPARADO    
-
-const Container = styled.div`
-    width: var(--width-mobile);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: pink;
-    gap: 25px;
-    margin-top: var(--height-header);
-`
-
-const Title = styled.h1`
-    /* font-family: 'Saira Stencil One', cursive;  */
-    font-size: 32px;
-    text-align: center;
-    color: black;
-    margin-top: 15px;
-    margin-bottom: 24px;
-`
 export default MainPage;

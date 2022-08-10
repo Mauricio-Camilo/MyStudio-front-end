@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import styled from "styled-components";
+import { SubContainer, Notificate, Delete, Update } from "./style";
 import { deleteClientById } from "./../../services/api";
 
 function ClientData(props) {
@@ -19,11 +19,10 @@ function ClientData(props) {
         )
     }
 
-    function deleteClient(id) {
+    async function deleteClient(id) {
         const checkDelete = window.confirm("Deseja deletar o cadastro desse aluno?");
         if (checkDelete) {
-            alert("O aluno será apagado");
-            deleteClientById(id);
+            await deleteClientById(id);
             window.location.reload();
         }
     }
@@ -66,46 +65,4 @@ function ClientData(props) {
     )
 }
 
-const SubContainer = styled.div`
-    width: 350px;
-    border: 3px solid blue;
-    display: flex;
-    gap: 10px;
-    padding: 10px 0;
-    position: relative;
-    background-color: ${(props) => props.selected ? "red" : "none"};
-
-        div {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-
-        h2 {
-            font-size: 20px;
-        }
-`
-
-const Notificate = styled.button`
-    display: ${(props) => props.selected? "block" : "none"};
-    width: 25px;
-    height: 25px;
-    position: absolute;
-    top: 10px;
-    right: 10px;
-`
-const Delete = styled.button`
-    width: 25px;
-    height: 25px;
-    position: absolute;
-    top: 50px;
-    right: 10px;
-`
-const Update = styled.button`
-    width: 25px;
-    height: 25px;
-    position: absolute;
-    top: 90px;
-    right: 10px;
-`
 export default ClientData;
