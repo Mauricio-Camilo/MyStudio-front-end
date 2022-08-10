@@ -44,7 +44,8 @@ function InsertClientPage() {
         setSelected(true);
         setSignUp(loading);
         if ([...selectedPayment.keys()][0] === undefined) {
-            alert("Selecione um plano antes de prosseguir com o cadastro")
+            alert("Selecione um plano antes de prosseguir com o cadastro");
+            setSignUp("Cadastrar");
         }
         else {
             try {
