@@ -61,6 +61,7 @@ strong {
 
   --width-mobile: 375px;
   --height-header: 75px;
+  --container-margin-top: -25px;
 
   --main-title-size: 32px;
   --title-margin-top: 15px;
