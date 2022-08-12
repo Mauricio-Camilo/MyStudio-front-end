@@ -1,39 +1,45 @@
 import styled from "styled-components";
 
 const Container = styled.div`
-    width: 375px;
+    min-width: var(--width-mobile);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* margin-top: 159px; */
+`
+const Logo = styled.img`
+     max-width: 300px; 
 `
 const Title = styled.h1`
     /* font-family: 'Saira Stencil One', cursive;  */
-    font-size: 32px;
+    font-size: var(--main-title-size);
     text-align: center;
     color: black;
-    margin-top: 159px;
-    margin-bottom: 24px;
+    margin-bottom: 24px; 
 `
 const Inputs = styled.div`
     display: flex;
     flex-direction: column;
-    gap: 13px;
-    padding-left: 25px;
+    align-items: center;
+    gap: var(--inputs-gap);
 `
 const Input = styled.input`
-    width: 326px;
-    height: 58px;
-    border-radius: 5px;
-    padding-left: 15px;
+    width: var(--inputs-width);
+    height: var(--inputs-height);
+    border-radius: var(--inputs-radius);
+    padding-left: var(--inputs-padding-left);
 `
 const Button = styled.button`
-    font-size: 20px;
-    font-weight: 700;
-    color: #FFFFFF;
-    width: 326px;
-    height: 46px;
-    border-radius: 5px;
+    width: var(--inputs-width);
+    height: var(--button-height);
+    font-size: var(--button-font-size);
+    font-weight: var(--button-font-weight);
+    color: var(--button-text-color);
+    border-radius: var(--inputs-radius);
+    background-color: blue;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: blue;
     cursor: pointer;
 `
 const Hiperlink = styled.p`
@@ -48,6 +54,7 @@ const Hiperlink = styled.p`
 export {
     Container,
     Title,
+    Logo,
     Inputs,
     Input,
     Button,

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const Container = styled.div`
-    width: var(--width-mobile);
+    min-width: var(--width-mobile);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -12,7 +12,7 @@ const Container = styled.div`
 
 const Title = styled.h1`
     /* font-family: 'Saira Stencil One', cursive;  */
-    font-size: 32px;
+    font-size: var(--main-title-size);
     text-align: center;
     color: black;
     margin-top: 15px;
@@ -20,13 +20,17 @@ const Title = styled.h1`
 `
 
 const SubContainer = styled.div`
-    width: 350px;
+    min-width: var(--subcontainer-width);
+    width: 80%;
     border: 3px solid blue;
     display: flex;
     gap: 10px;
     padding: 10px 0;
     position: relative;
     background-color: ${(props) => props.selected ? "red" : "none"};
+    /* margin-right: 50px;
+    margin-left: 50px; */
+
 
         div {
             display: flex;

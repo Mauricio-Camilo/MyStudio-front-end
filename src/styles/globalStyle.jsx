@@ -58,9 +58,36 @@ strong {
   --color-1: blue;
   --color-2: red;
   --color-3: green;
+
   --width-mobile: 375px;
   --height-header: 75px;
+
+  --main-title-size: 32px;
+  --title-margin-top: 15px;
+  --title-margin-bottom: 24px;
+
+  --subcontainer-width: 350px;
+  
+  --inputs-width: 326px;
+  --inputs-height: 58px;
+  --inputs-gap: 13px;
+  --inputs-radius: 5px;
+  --inputs-padding-left: 15px;
+
   --button-collor: #FF6C00;
+  --button-height: 46px;
+  --button-font-size: 20px;
+  --button-font-weight: 700;
+  --button-text-color:#FFFFFF;
+
+  --icon-size: 25px;
+
+  --payment-width: 150px;
+  --payment-heigth: 75px;
+  --payment-background: #ffa920;
+  --payment-gap: 10px;
+  --payment-radius: 5px;
+
 
 }
 

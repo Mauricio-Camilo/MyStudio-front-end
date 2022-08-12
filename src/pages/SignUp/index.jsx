@@ -4,7 +4,9 @@ import { ThreeDots } from 'react-loader-spinner';
 
 import { makeSignUp } from "../../services/api";
 
-import { Container, Title, Inputs, Input, Button, Hiperlink} from "./style"
+import { Container, Logo, Inputs, Input, Button, Hiperlink} from "./style";
+import logo from "./../../assets/logo.svg";
+
 
 function SignUp() {
 
@@ -42,7 +44,8 @@ function SignUp() {
 
     return (
         <Container>
-            <Title>MyStudio</Title>
+            {/* <Title>MyStudio</Title> */}
+            <Logo src={logo}></Logo>
             <form onSubmit={handleSignUp}>
                 <Inputs>
                     <Input id="name" type="text" placeholder="Nome" 

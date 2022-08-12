@@ -3,8 +3,9 @@ import { UserContext } from "../../contexts/userContext";
 import { useNavigate } from "react-router-dom";
 import { ThreeDots } from 'react-loader-spinner';
 import { makeLogin } from "../../services/api";
+import logo from "./../../assets/logo.svg";
 
-import { Container, Title, Inputs, Input, Button, Hiperlink} from "./../SignUp/style"
+import { Container, Logo, Inputs, Input, Button, Hiperlink} from "./../SignUp/style"
 
 function Login () {
 
@@ -27,10 +28,10 @@ function Login () {
             const response = await makeLogin({
                 cpf,
                 password
-            })  
+            })
             const token = response.data
-            localStorage.setItem("token", token); 
-            setToken(token); 
+            localStorage.setItem("token", token);
+            setToken(token);
             navigate("/main");
         }
 
@@ -42,7 +43,9 @@ function Login () {
 
     return (
         <Container>
-            <Title>MyStudio</Title>
+            {/* <Title>MyStudio</Title> */}
+            <Logo src={logo}></Logo>
+
             <form onSubmit={handleLogin}>
                 <Inputs>
                     <Input id="login" type="text" placeholder="CPF"
