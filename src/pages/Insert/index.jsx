@@ -47,7 +47,6 @@ function InsertClientPage() {
         else {
             setSelected(true);
             setSignUp(loading);
-
             try {
                 const client = {
                     name,

@@ -45,16 +45,16 @@ function SignUp() {
             <Title>MyStudio</Title>
             <form onSubmit={handleSignUp}>
                 <Inputs>
-                    <Input type="text" placeholder="Nome" 
+                    <Input id="name" type="text" placeholder="Nome" 
                         onChange={(e) => setName(e.target.value)} value={name}>
                     </Input>
-                    <Input type="text" placeholder="CPF" 
+                    <Input id="cpf" type="text" placeholder="CPF" 
                         onChange={(e) => setCpf(e.target.value)} value={cpf}>
                     </Input>
-                    <Input type="password" placeholder="Senha" 
+                    <Input id="password" type="password" placeholder="Senha" 
                         onChange={(e) => setPassword(e.target.value)} value={password}>
                     </Input>
-                    <Input type="password" placeholder="Confirme a senha" 
+                    <Input id="confirmpassword" type="password" placeholder="Confirme a senha" 
                         onChange={(e) => setConfirmPassword(e.target.value)} value={confirmPassword}>
                     </Input>
                     <Button type="submit">{signUp}</Button>

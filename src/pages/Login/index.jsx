@@ -45,10 +45,10 @@ function Login () {
             <Title>MyStudio</Title>
             <form onSubmit={handleLogin}>
                 <Inputs>
-                    <Input type="text" placeholder="CPF"
+                    <Input id="login" type="text" placeholder="CPF"
                         onChange={(e) => setCpf(e.target.value)} value={cpf}>
                     </Input>
-                    <Input type="password" placeholder="Senha"
+                    <Input id="password" type="password" placeholder="Senha"
                         onChange={(e) => setPassword(e.target.value)} value={password}>
                     </Input>
                     <Button type="submit">{login}</Button>
