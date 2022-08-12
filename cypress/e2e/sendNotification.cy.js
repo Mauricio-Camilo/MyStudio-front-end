@@ -16,10 +16,16 @@ describe("main page suit test", () => {
             password: "password",
         }
 
+        function calculate25daysleft () {
+            const today = new Date();
+            const minus30days = new Date(today.setDate(today.getDate() - 25));
+            return minus30days.toLocaleDateString("pt-BR");
+        }
+
         const client = {
             name: "Cliente1",
             updatename: "Novo Cliente 1",
-            date: "01/01/2023"
+            date: calculate25daysleft()
         }
 
         cy.visit(`${URL_FRONT}/`);
@@ -40,21 +46,6 @@ describe("main page suit test", () => {
         cy.intercept("POST", `${URL_SERVER}/clients`).as("createClient");
             cy.contains("Cadastrar").click();
         cy.wait("@createClient");
-        cy.contains(client.name).should("be.visible");
-
-        // cy.intercept("GET", `${URL_SERVER}/clients`).as("getClients");
-        // cy.wait("@getClients");
-        cy.contains("U").click();
-        cy.url().should("equal", `${URL_FRONT}/update/1`);
-        cy.get("#name").type(client.updatename);
-        cy.contains("Anual").click();
-        cy.intercept("PUT", `${URL_SERVER}/clients/1`).as("updateClient");
-            cy.contains("Atualizar").click();
-        cy.wait("@updateClient");
-        cy.contains(client.updatename).should("be.visible");
-
-        cy.intercept("DELETE", `${URL_SERVER}/clients/1`).as("deleteClient");
-            cy.contains("X").click();
-        cy.wait("@deleteClient");
+        cy.contains(client.name).should("be.visible");     
     })
 })

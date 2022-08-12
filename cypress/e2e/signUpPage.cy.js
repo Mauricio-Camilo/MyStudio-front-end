@@ -26,16 +26,13 @@ describe("main page suit test", () => {
         cy.intercept("POST", `${URL_SERVER}/signup`).as("signup");
             cy.get("button").click();
         cy.wait("@signup");
-
 		cy.url().should("equal", `${URL_FRONT}/`);
 
         cy.get("#login").type(instructor.cpf);
         cy.get("#password").type(instructor.password);
-
         cy.intercept("POST", `${URL_SERVER}/signin`).as("signin");
             cy.get("button").click();
         cy.wait("@signin");
-
         cy.url().should("equal", `${URL_FRONT}/main`)
     })
 })

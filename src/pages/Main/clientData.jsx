@@ -50,7 +50,7 @@ function ClientData(props) {
     function handleButtons() {
         return (
             <>
-                <Notificate selected={notification} onClick={() => sendWhatsAppMessage(name, daysLeft) }>N</Notificate>
+                <Notificate id="notification"selected={notification} onClick={() => sendWhatsAppMessage(name, daysLeft) }>N</Notificate>
                 <Delete onClick={() => deleteClient(id)}>X</Delete>
                 <Update onClick={() => navigate(`/update/${id}`)}>U</Update>
             </>
