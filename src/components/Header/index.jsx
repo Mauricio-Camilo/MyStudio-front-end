@@ -15,9 +15,9 @@ function Header() {
 
     return (
         <Container>
-            <Hiperlink onClick={() => navigate("/insert")}>Página criação</Hiperlink>           
-            <Hiperlink onClick={() => navigate("/main")}>Página principal</Hiperlink>
-            <Hiperlink onClick={() => logout()}>Logout</Hiperlink>
+            <Hiperlink id="creation" onClick={() => navigate("/insert")}>Página criação</Hiperlink>           
+            <Hiperlink id="main" onClick={() => navigate("/main")}>Página principal</Hiperlink>
+            <Hiperlink id="logout" onClick={() => logout()}>Logout</Hiperlink>
         </Container>
     )
 }

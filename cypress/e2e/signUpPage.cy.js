@@ -4,12 +4,11 @@ beforeEach(() => {
 	cy.resetDatabase();
 });
 
-
 describe("main page suit test", () => {
-    it("test for add recommendation", () => {
+    it("test for make signup and login", () => {
 
         const URL_FRONT = "http://localhost:3000";
-        // const URL_SERVER = "http://localhost:5000/signin";
+        const URL_SERVER = "http://localhost:5000";
 
         const instructor = {
             name: "instructor1",
@@ -24,14 +23,18 @@ describe("main page suit test", () => {
         cy.get("#password").type(instructor.password);
         cy.get("#confirmpassword").type(instructor.confirmPassword);
 
-        cy.get("button").click();
+        cy.intercept("POST", `${URL_SERVER}/signup`).as("signup");
+            cy.get("button").click();
+        cy.wait("@signup");
 
 		cy.url().should("equal", `${URL_FRONT}/`);
 
         cy.get("#login").type(instructor.cpf);
         cy.get("#password").type(instructor.password);
 
-        cy.get("button").click();
+        cy.intercept("POST", `${URL_SERVER}/signin`).as("signin");
+            cy.get("button").click();
+        cy.wait("@signin");
 
         cy.url().should("equal", `${URL_FRONT}/main`)
     })

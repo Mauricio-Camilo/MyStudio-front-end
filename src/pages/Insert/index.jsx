@@ -67,10 +67,10 @@ function InsertClientPage() {
     function handleInputs() {
         return (
             <Inputs>
-                <Input type="text" placeholder="Nome"
+                <Input id="name" type="text" placeholder="Nome"
                     onChange={(e) => setName(e.target.value)} value={name}>
                 </Input>
-                <Input type="text" placeholder="Data de início Ex:01/01/2023"
+                <Input id="startdate" type="text" placeholder="Data de início Ex:01/01/2023"
                     onChange={(e) => setDate(e.target.value)} value={date}>
                 </Input>
             </Inputs>
