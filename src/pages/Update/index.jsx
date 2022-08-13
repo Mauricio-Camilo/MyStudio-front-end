@@ -5,7 +5,7 @@ import { updateClientById } from "../../services/api";
 
 import { ThreeDots } from 'react-loader-spinner';
 
-import { Container, Title, Inputs, Input, PaymentSection, Payment, Button, } from "./../Insert/style"
+import { Container, Title, Inputs, Input, SelectSection, Payment, Button, } from "./../Insert/style"
 
 function UpdateClientPage() {
 
@@ -18,6 +18,7 @@ function UpdateClientPage() {
     const [selected, setSelected] = useState(false);
     const [signUp, setSignUp] = useState("Atualizar");
     const [selectedPayment, setSelectedPayment] = useState(new Map());
+    const [selectedService, setSelectedService] = useState(new Map());
 
     const navigate = useNavigate();
 
@@ -33,13 +34,26 @@ function UpdateClientPage() {
         }
     }
 
+    function activateService(option) {
+        const alreadySelected = selectedService.has(option);
+        if (alreadySelected) {
+            selectedService.delete(option);
+            setSelectedService(new Map(selectedService))
+        }
+        else {
+            selectedService.clear();
+            setSelectedService(new Map(selectedService.set(option)))
+        }
+    }
+
     async function updateClient() {
         setSelected(true);
         setSignUp(loading);
         try {
             const client = {
                 name,
-                payment: [...selectedPayment.keys()][0],
+                payment: [...selectedPayment.keys()][0] === undefined ? "" : [...selectedPayment.keys()][0],
+                service: [...selectedService.keys()][0] === undefined ? "" : [...selectedService.keys()][0],
                 startDate: date
             };
             await updateClientById(client, clientId);
@@ -86,6 +100,26 @@ function UpdateClientPage() {
         )
     }
 
+    function handleServices() {
+        const services = [
+            { option: "Pilates", id: "1" },
+            { option: "Fisioterapia", id: "2" },
+            { option: "Barras", id: "3" },
+            { option: "Osteopatia", id: "4" },
+        ];
+        return (
+            services.map(service => {
+                const { option, id } = service;
+                const checkSelectedService = selectedService.has(option)
+                return (
+                    <Payment key={id} selected={checkSelectedService} onClick={() => activateService(option)}>
+                        <p>{option}</p>
+                    </Payment>
+                )
+            })
+        )
+    }
+
     return (
         <>
             <Header />
@@ -93,9 +127,13 @@ function UpdateClientPage() {
                 <Title>Atualize os dados do aluno</Title>
                 {handleInputs()}
                 <Title>Escolha o plano</Title>
-                <PaymentSection>
+                <SelectSection>
                     {handlePayments()}
-                </PaymentSection>
+                </SelectSection>
+                <Title>Escolha o serviço</Title>
+                <SelectSection>
+                    {handleServices()}
+                </SelectSection>
                 <Button selected={selected} onClick={() => updateClient()}>{signUp}</Button>
             </Container>
         </>

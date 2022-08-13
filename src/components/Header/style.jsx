@@ -21,8 +21,12 @@ const Hiperlink = styled.h3`
 const Icon = styled.p`
     font-size: var(--icon-size);
 `
+const Logo = styled.img`
+     max-width: 100px; 
+`
 export {
     Container,
+    Logo,
     Hiperlink,
     Icon
 }

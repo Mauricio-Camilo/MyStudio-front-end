@@ -1,21 +1,25 @@
 import { useNavigate } from "react-router-dom";
-import { SubContainer, Notificate, Delete, Update } from "./style";
+import { SubContainer, ClientContainer, IconUpdate, IconWhatsApp, IconDelete } from "./style";
 import { deleteClientById } from "./../../services/api";
+import { RiWhatsappFill } from "react-icons/ri";
+import { MdCreate } from "react-icons/md";
+import { AiFillDelete } from "react-icons/ai";
 
 function ClientData(props) {
 
-    const { id, name, startDate, finishDate, payment, notification, daysLeft } = props;
+    const { id, name, startDate, service, finishDate, payment, notification, daysLeft } = props;
 
     const navigate = useNavigate();
 
     function handleClient() {
         return (
-            <div>
-                <h2><strong>Nome:</strong>{name}</h2>
-                <h2><strong>Plano contratado:</strong>{payment}</h2>
-                <h2><strong>Inicio do plano:</strong>{startDate}</h2>
-                <h2><strong>Término do plano:</strong>{finishDate}</h2>
-            </div>
+            <ClientContainer>
+                <h2><strong>Nome: </strong>{name}</h2>
+                <h2><strong>Serviço escolhido: </strong>{service}</h2>
+                <h2><strong>Plano contratado: </strong>{payment}</h2>
+                <h2><strong>Inicio do plano: </strong>{startDate}</h2>
+                <h2><strong>Término do plano: </strong>{finishDate}</h2>
+            </ClientContainer>
         )
     }
 
@@ -50,9 +54,11 @@ function ClientData(props) {
     function handleButtons() {
         return (
             <>
-                <Notificate id="notification"selected={notification} onClick={() => sendWhatsAppMessage(name, daysLeft) }>N</Notificate>
-                <Delete onClick={() => deleteClient(id)}>X</Delete>
-                <Update onClick={() => navigate(`/update/${id}`)}>U</Update>
+
+                <IconWhatsApp id="notification"selected={notification} 
+                onClick={() => sendWhatsAppMessage(name, daysLeft) }><RiWhatsappFill/></IconWhatsApp>
+                <IconDelete onClick={() => deleteClient(id)}><AiFillDelete/></IconDelete>
+                <IconUpdate onClick={() => navigate(`/update/${id}`)}><MdCreate/></IconUpdate>
             </>
         )
     }

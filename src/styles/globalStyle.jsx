@@ -62,15 +62,23 @@ strong {
   --width-mobile: 375px;
   --height-header: 75px;
   --container-margin-top: -25px;
+  --container-background: linear-gradient(
+        135deg,
+        rgba(121, 9, 9, 0.4) 15%,
+        rgba(9, 9, 121, 1) 45%,
+        rgba(0, 212, 255, 1) 100%
+    );
 
   --main-title-size: 32px;
   --title-margin-top: 15px;
   --title-margin-bottom: 24px;
+  --title-font-color: #FFFFFF;
 
   --subcontainer-width: 350px;
-  
-  --inputs-width-mobile: 326px;
-  --inputs-height-mobile: 58px;
+  --subcontainer-border: 3px solid blue;
+  --subcontainer-div-gap: 10px;
+  --subcontainer-font-size: 20px;
+
   --inputs-width: 326px;
   --inputs-height: 58px;
   --inputs-font-size: 20px;
@@ -89,7 +97,7 @@ strong {
   --payment-width: 150px;
   --payment-heigth: 75px;
   --payment-background: #ffa920;
-  --payment-gap: 10px;
+  --payment-gap: 20px;
   --payment-radius: 5px;
 
 

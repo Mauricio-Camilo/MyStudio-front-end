@@ -1,8 +1,8 @@
 import { useNavigate } from "react-router-dom";
-import { Container, Hiperlink, Icon } from "./style";
+import { Container, Hiperlink, Icon, Logo } from "./style";
 import { GrLogout } from "react-icons/gr";
-import { MdCreate } from "react-icons/md";
-
+import { GrAddCircle } from "react-icons/gr";
+import logo from "./../../assets/logo.svg";
 
 function Header() {
 
@@ -18,9 +18,10 @@ function Header() {
 
     return (
         <Container>
-            {/* <Hiperlink id="creation" onClick={() => navigate("/insert")}>Página criação</Hiperlink>        */}
-            <Icon id="creation" onClick={() => navigate("/insert")}><MdCreate/></Icon>
-            <Hiperlink id="main" onClick={() => navigate("/main")}>Símbolo</Hiperlink>
+            <Icon id="creation" onClick={() => navigate("/insert")}><GrAddCircle/></Icon>
+            <Logo src={logo} id="main" onClick={() => navigate("/main")}></Logo>
+
+            {/* <Hiperlink id="main" onClick={() => navigate("/main")}>Símbolo</Hiperlink> */}
             <Icon id="logout" onClick={() => logout()}><GrLogout/></Icon>
         </Container>
     )

@@ -5,16 +5,15 @@ const Container = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: blue;
     margin-top: var(--height-header);
     padding-bottom: 25px;
+    background: var(--container-background);
 `
 
 const Title = styled.h1`
-    /* font-family: 'Saira Stencil One', cursive;  */
     font-size: var(--main-title-size);
     text-align: center;
-    color: black;
+    color: var(--title-font-color);
     margin-top: var(--title-margin-top);
     margin-bottom: var(--title-margin-bottom);
 `
@@ -32,11 +31,12 @@ const Input = styled.input`
     padding-left: var(--inputs-padding-left);
 `
 
-const PaymentSection = styled.div`
+const SelectSection = styled.div`
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: var(--payment-gap);
+    width: 350px;
 `
 
 const Payment = styled.div`
@@ -45,7 +45,6 @@ const Payment = styled.div`
     display: flex;
     justify-content: center;
     align-items: center; 
-    gap: var(--payment-gap);
     background-color: var(--payment-background);
     border: ${(props) => props.selected? "3px solid red" : "none"};
     border-radius: var(--payment-radius);
@@ -58,7 +57,7 @@ const Button = styled.button`
     font-weight: var(--button-font-weight);
     border-radius: var(--inputs-radius);
     color: var(--button-text-color);
-    background-color: #FF6C00;
+    background-color: var(--button-color);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -72,7 +71,7 @@ export {
     Title,
     Input,
     Inputs,
-    PaymentSection,
+    SelectSection,
     Payment,
     Button
 }

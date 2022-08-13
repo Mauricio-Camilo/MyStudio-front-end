@@ -28,5 +28,6 @@ export const api = axios.create({
   }
 
   export const updateClientById = async (formData, id) => {
+    console.log(formData);
     await api.put(`/clients/${id}`,formData)
   }

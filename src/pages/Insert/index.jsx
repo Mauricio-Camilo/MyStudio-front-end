@@ -4,7 +4,7 @@ import Header from "../../components/Header";
 import { useNavigate } from "react-router-dom";
 import { postClient } from "../../services/api";
 
-import { Container, Title, Inputs, Input, PaymentSection, Payment, Button, } from "./style"
+import { Container, Title, Inputs, Input, SelectSection, Payment, Button, } from "./style"
 
 import { ThreeDots } from 'react-loader-spinner';
 
@@ -25,6 +25,7 @@ function InsertClientPage() {
     const [selected, setSelected] = useState(false);
     const [signUp, setSignUp] = useState("Cadastrar");
     const [selectedPayment, setSelectedPayment] = useState(new Map());
+    const [selectedService, setSelectedService] = useState(new Map());
 
     const navigate = useNavigate();
 
@@ -40,6 +41,18 @@ function InsertClientPage() {
         }
     }
 
+    function activateService(option) {
+        const alreadySelected = selectedService.has(option);
+        if (alreadySelected) {
+            selectedService.delete(option);
+            setSelectedService(new Map(selectedService))
+        }
+        else {
+            selectedService.clear();
+            setSelectedService(new Map(selectedService.set(option)))
+        }
+    }
+
     async function createClient() {
         if ([...selectedPayment.keys()][0] === undefined) {
             alert("Selecione um plano antes de prosseguir com o cadastro");
@@ -51,6 +64,7 @@ function InsertClientPage() {
                 const client = {
                     name,
                     payment: [...selectedPayment.keys()][0],
+                    service: [...selectedService.keys()][0],
                     startDate: date
                 };
                 await postClient(client, config);
@@ -79,10 +93,10 @@ function InsertClientPage() {
 
     function handlePayments() {
         const payments = [
-            { option: "Mensal", icon: "card-outline", id: "1" },
-            { option: "Trimestral", icon: "barcode-outline", id: "2" },
-            { option: "Semestral", icon: "cash-outline", id: "3" },
-            { option: "Anual", icon: "cash-outline", id: "4" },
+            { option: "Mensal", id: "1" },
+            { option: "Trimestral", id: "2" },
+            { option: "Semestral", id: "3" },
+            { option: "Anual", id: "4" },
         ];
         return (
             payments.map(payment => {
@@ -97,6 +111,26 @@ function InsertClientPage() {
         )
     }
 
+    function handleServices() {
+        const services = [
+            { option: "Pilates", id: "1" },
+            { option: "Fisioterapia", id: "2" },
+            { option: "Barras", id: "3" },
+            { option: "Osteopatia", id: "4" },
+        ];
+        return (
+            services.map(service => {
+                const { option, id } = service;
+                const checkSelectedService = selectedService.has(option)
+                return (
+                    <Payment key={id} selected={checkSelectedService} onClick={() => activateService(option)}>
+                        <p>{option}</p>
+                    </Payment>
+                )
+            })
+        )
+    }
+
     return (
         <>
             <Header />
@@ -104,9 +138,13 @@ function InsertClientPage() {
                 <Title>Cadastre seu novo aluno</Title>
                 {handleInputs()}
                 <Title>Escolha o plano</Title>
-                <PaymentSection>
+                <SelectSection>
                     {handlePayments()}
-                </PaymentSection>
+                </SelectSection>
+                <Title>Escolha o serviço</Title>
+                <SelectSection>
+                    {handleServices()}
+                </SelectSection>
                 <Button selected={selected} onClick={() => createClient()}>{signUp}</Button>
             </Container>
         </>

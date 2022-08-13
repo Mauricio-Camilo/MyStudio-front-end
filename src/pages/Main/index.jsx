@@ -48,9 +48,9 @@ function MainPage() {
         if (reloadPage) {
             return (
                 clients.map(client => {
-                    const { id, name, payments, startDate, finishDate, notification, daysLeft } = client;
+                    const { id, name, payments, services, startDate, finishDate, notification, daysLeft } = client;
                     return (
-                          <ClientData key={id} id={id} name={name} startDate={startDate}
+                          <ClientData key={id} id={id} name={name} startDate={startDate} service={services.name}
                                 finishDate={finishDate} payment={payments.period} 
                                 notification={notification} daysLeft={daysLeft}/>
                     )
