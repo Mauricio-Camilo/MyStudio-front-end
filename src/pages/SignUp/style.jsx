@@ -10,13 +10,6 @@ const Container = styled.div`
 const Logo = styled.img`
      max-width: 300px; 
 `
-const Title = styled.h1`
-    /* font-family: 'Saira Stencil One', cursive;  */
-    font-size: var(--main-title-size);
-    text-align: center;
-    color: black;
-    margin-bottom: 24px; 
-`
 const Inputs = styled.div`
     display: flex;
     flex-direction: column;
@@ -24,10 +17,25 @@ const Inputs = styled.div`
     gap: var(--inputs-gap);
 `
 const Input = styled.input`
-    width: var(--inputs-width);
-    height: var(--inputs-height);
+    font-size: var(--inputs-font-size);
+    width: var(--inputs-width-mobile);
+    height: var(--inputs-height-mobile);
     border-radius: var(--inputs-radius);
     padding-left: var(--inputs-padding-left);
+    background-color: red;
+    &::placeholder {
+    font-size: 20px;
+    color: gray;
+  }
+
+  @media (min-width: 376px){
+    background-color: white;
+
+    font-size: var(--inputs-font-size);
+    width: var(--inputs-width);
+    height: var(--inputs-height);
+  }
+
 `
 const Button = styled.button`
     width: var(--inputs-width);
@@ -36,7 +44,7 @@ const Button = styled.button`
     font-weight: var(--button-font-weight);
     color: var(--button-text-color);
     border-radius: var(--inputs-radius);
-    background-color: blue;
+    background-color: var(--button-color);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -53,7 +61,6 @@ const Hiperlink = styled.p`
 `
 export {
     Container,
-    Title,
     Logo,
     Inputs,
     Input,

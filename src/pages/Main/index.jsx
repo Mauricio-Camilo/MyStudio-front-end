@@ -4,6 +4,7 @@ import Header from "../../components/Header";
 import { Container, Title } from "./style";
 import { getAllClients } from "../../services/api";
 import ClientData from "./clientData";
+import { Oval } from 'react-loader-spinner';
 
 function MainPage() {
 
@@ -42,7 +43,8 @@ function MainPage() {
     }, [token]);
 
     function handleClients() {
-        if (postClient) return <h1>Carregando alunos</h1>;
+        if (postClient) return <Oval color="#FFFFFF" height={80} width={80} secondaryColor="#20ACDE"/>
+        ;
         if (reloadPage) {
             return (
                 clients.map(client => {

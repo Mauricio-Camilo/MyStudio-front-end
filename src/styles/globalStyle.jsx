@@ -69,13 +69,16 @@ strong {
 
   --subcontainer-width: 350px;
   
+  --inputs-width-mobile: 326px;
+  --inputs-height-mobile: 58px;
   --inputs-width: 326px;
   --inputs-height: 58px;
+  --inputs-font-size: 20px;
   --inputs-gap: 13px;
   --inputs-radius: 5px;
   --inputs-padding-left: 15px;
 
-  --button-collor: #FF6C00;
+  --button-color: #90388C;
   --button-height: 46px;
   --button-font-size: 20px;
   --button-font-weight: 700;
