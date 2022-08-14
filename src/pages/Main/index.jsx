@@ -13,9 +13,9 @@ function MainPage() {
     const [clients, setClients] = useState();
     const [reloadPage, setReloadPage] = useState(false);
 
-    const { filter, setFilter, token } = useContext(UserContext);
+    const daysLeftFilter = -14;
 
-    console.log(filter);
+    const { filter, setFilter, token } = useContext(UserContext);
 
     const config = {
         headers: {
@@ -31,7 +31,6 @@ function MainPage() {
         async function getUserPostsById() {
             try {
                 const clients = await getAllClients(config);
-                console.log(clients.data)
                 setClients(clients.data);
                 setPostClients(false);
                 if (clients.data.length !== 0) {
@@ -52,7 +51,7 @@ function MainPage() {
             return (
                 clients.map(client => {
                     const { id, name, payments, services, startDate, finishDate, notification, daysLeft } = client;
-                    if ((services.name === filter || filter === "Todos") && daysLeft > -14) {
+                    if ((services.name === filter || filter === "Todos") && daysLeft > daysLeftFilter) {
                         return (
                               <ClientData key={id} id={id} name={name} startDate={startDate} service={services.name}
                                     finishDate={finishDate} payment={payments.period} 

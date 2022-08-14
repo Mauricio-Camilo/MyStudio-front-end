@@ -30,10 +30,19 @@ const SubContainer = styled.div`
 `
 const Icon = styled.p`
     font-size: var(--icon-size-mobile);
+
+    @media (min-width: 450px) {
+        font-size: var(--icon-size-desktop);
+    }
 `
 const Logo = styled.img`
      max-width: var(--logo-header-mobile);
      padding-top: var(--logo-header-top);
+
+     @media (min-width: 450px) {
+        max-width: 100px;
+        padding-top: 15px;
+    }
 `
 export {
     Container,

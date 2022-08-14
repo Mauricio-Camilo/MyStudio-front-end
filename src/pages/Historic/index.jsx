@@ -12,11 +12,9 @@ function HistoricPage() {
     const [postClient, setPostClients] = useState(false);
     const [clients, setClients] = useState();
     const [reloadPage, setReloadPage] = useState(false);
-    const [filter, setFilter] = useState ("All");
-
     const historicDaysFilter = 0;
 
-    const { token } = useContext(UserContext);
+    const { token, filter } = useContext(UserContext);
 
     const config = {
         headers: {
@@ -32,7 +30,6 @@ function HistoricPage() {
         async function getUserPostsById() {
             try {
                 const clients = await getAllClients(config);
-                console.log(clients.data)
                 setClients(clients.data);
                 setPostClients(false);
                 if (clients.data.length !== 0) {
@@ -53,8 +50,7 @@ function HistoricPage() {
             return (
                 clients.map(client => {
                     const { id, name, payments, services, startDate, finishDate, notification, daysLeft } = client;
-                    console.log(daysLeft)
-                    if (daysLeft < historicDaysFilter) {
+                    if ((services.name === filter || filter === "Todos") && daysLeft > historicDaysFilter) {
                         return (
                               <ClientData key={id} id={id} name={name} startDate={startDate} service={services.name}
                                     finishDate={finishDate} payment={payments.period} 

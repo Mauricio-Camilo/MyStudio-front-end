@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Header from "../../components/Header";
+import Footer from "../../components/Footer";
 import { useNavigate, useParams } from "react-router-dom";
 import { updateClientById } from "../../services/api";
 
@@ -126,16 +127,17 @@ function UpdateClientPage() {
             <Container>
                 <Title>Atualize os dados do aluno</Title>
                 {handleInputs()}
-                <Title>Escolha o plano</Title>
+                <Title>Atualize o plano</Title>
                 <SelectSection>
                     {handlePayments()}
                 </SelectSection>
-                <Title>Escolha o serviço</Title>
+                <Title>Atualize o serviço</Title>
                 <SelectSection>
                     {handleServices()}
                 </SelectSection>
                 <Button selected={selected} onClick={() => updateClient()}>{signUp}</Button>
             </Container>
+            <Footer />
         </>
     )
 }

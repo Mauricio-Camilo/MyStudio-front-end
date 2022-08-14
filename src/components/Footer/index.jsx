@@ -21,6 +21,7 @@ function Footer() {
         <Container>
             <Icon id="main" onClick={() => navigate("/main")}><ImHome/></Icon>
             <SearchBar>
+                <h3>Selecione o serviço</h3>
                 <SearchIcon id="search" onClick={() => setVisible(!visible)}><BiChevronUpCircle/></SearchIcon>
                 <Services visible={visible}>
                     {services.map(service => {

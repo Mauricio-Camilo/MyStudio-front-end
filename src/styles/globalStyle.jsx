@@ -97,7 +97,7 @@ strong {
   --button-text-color:#FFFFFF;
 
   --icon-size-mobile: 20px;
-  --icon-size-desktop: 25px;
+  --icon-size-desktop: 30px;
 
   --logo-header-mobile: 75px;
   --logo-header-top: 10px;
@@ -105,10 +105,11 @@ strong {
   --select-width: 150px;
   --select-heigth: 75px;
   --select-color: white;
-  --select-background: #87287d;
+  --select-background: #3515ed;
   --select-gap: 20px;
   --select-radius: 5px;
 
+  --footer-search-width: 200px;
 
 }
 

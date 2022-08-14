@@ -21,7 +21,7 @@ function ClientData(props) {
                 <h2><strong>Nome: </strong>{name}</h2>}
                 <h2><strong>Serviço: </strong>{service}</h2>
                 <h2><strong>Plano: </strong>{payment}</h2>
-                <h2><strong>Inicio: </strong>{startDate}</h2>
+                <h2><strong>Início: </strong>{startDate}</h2>
                 <h2><strong>Término: </strong>{finishDate}</h2>
             </ClientContainer>
         )

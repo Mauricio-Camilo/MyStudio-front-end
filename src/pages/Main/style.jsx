@@ -69,7 +69,7 @@ const IconWhatsApp = styled.p`
     color: #41A918;
     background-color: white;
     position: absolute;
-    top: 20px;
+    top: 120px;
     right: 20px;
 
     @media (max-width: 450px) {
@@ -91,7 +91,7 @@ const IconDelete= styled.p`
 const IconUpdate = styled.p`
     font-size: var(--icon-size-desktop);
     position: absolute;
-    top: 120px;
+    top: 20px;
     right: 20px;
     @media (max-width: 450px) {
         font-size: var(--icon-size-mobile);

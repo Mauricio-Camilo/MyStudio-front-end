@@ -27,17 +27,25 @@ const SearchIcon = styled.p`
 `
 
 const SearchBar = styled.div`
-    width: 150px;
+    width: var(--footer-search-width);
     height: 30px;
     border-radius: 5px;
     border: 1px solid black;
     background-color: white;
     position: relative;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    padding-left: 10px;
+
+        h3 {
+            font-size: 15px;
+            color: gray;
+        }
 `
 
 const Services = styled.div`
-    position: absolute;
-    width: 150px;
+    width: var(--footer-search-width);
     height: 50px;
     border: 1px solid black;
     border-radius: 5px;
@@ -46,6 +54,7 @@ const Services = styled.div`
     z-index: -1;
     padding: 10px;
     display: ${(props) => props.visible? "block": "none"};
+    position: absolute;
     cursor: pointer;
     overflow-y: scroll; 
 
@@ -54,7 +63,7 @@ const Services = styled.div`
     }       
 
      p {
-         margin: 20px 0;
+         margin: 10px 0;
      }
 
 `
