@@ -27,18 +27,15 @@ const Title = styled.h1`
     font-size: var(--main-title-size);
     text-align: center;
     color: var(--title-font-color);
-    margin-top: 15px;
-    margin-bottom: 24px;
+    margin-top: var(--title-margin-top);
 `
-
 const SubContainer = styled.div`
     min-width: var(--subcontainer-width);
     max-width: var(--subcontainer-max-width);
     width: 80%;
     border: ${(props) => props.selected ? "3px solid red" : "3px solid #90388C"};
-    display: flex;
-    gap: 10px;
     padding: 10px 0;
+    display: flex;
     position: relative;
     background-color: ${(props) => props.selected ? "#4fea17" : "none"};
 
@@ -55,14 +52,19 @@ const SubContainer = styled.div`
 const ClientContainer = styled.div`
     padding-left: 15px;
     max-width: 700px;
+    display: flex;
     word-wrap: break-word;  
     position: relative;
 
-        h1 {
+        h2 {
+            font-size: 20px;
+        }
+
+        /* h1 {
             font-size: 25px;
             position: absolute;
             left: 300px;
-        }
+        } */
 
     @media (max-width: 400px) {
         max-width: 300px;

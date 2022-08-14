@@ -73,7 +73,7 @@ strong {
     --container-background: white;
 
   --main-title-size: 32px;
-  --title-margin-top: 15px;
+  --title-margin-top: 25px;
   --title-margin-bottom: 24px;
   --title-font-color: #000000;
 
@@ -99,8 +99,9 @@ strong {
   --icon-size-mobile: 25px;
   --icon-size-desktop: 30px;
 
-  --logo-header-mobile: 70px;
-  --logo-header-top: 10px;
+  --logo-header-mobile: 90px;
+  --logo-header-top: 15px;
+  --logo-header-desktop: 125px;
 
   --select-width: 150px;
   --select-heigth: 75px;

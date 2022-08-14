@@ -49,7 +49,6 @@ const SearchIcon = styled.p`
         top: 8px;
     }
 `
-
 const SearchBar = styled.div`
     max-width: 400px;
     width: 80%;
@@ -109,9 +108,9 @@ const Services = styled.div`
 
      @media (max-width: 450px) {
         width: var(--footer-search-width-mobile);
-        height: 50px;
+        height: 55px;
         right: -1px;
-        bottom: 20px;
+        bottom: 30px;
         padding-bottom: 2px;
     }  
 `

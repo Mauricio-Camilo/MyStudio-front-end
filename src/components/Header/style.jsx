@@ -41,8 +41,8 @@ const Logo = styled.img`
      padding-top: var(--logo-header-top);
 
      @media (min-width: 450px) {
-        max-width: 100px;
-        padding-top: 15px;
+        max-width: var(--logo-header-desktop);
+        padding-top: 20px;
     }
 `
 export {

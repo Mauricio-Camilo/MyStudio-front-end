@@ -50,7 +50,7 @@ function HistoricPage() {
             return (
                 clients.map(client => {
                     const { id, name, payments, services, startDate, finishDate, notification, daysLeft } = client;
-                    if ((services.name === filter || filter === "Todos") && daysLeft > historicDaysFilter) {
+                    if ((services.name === filter || filter === "Todos") && daysLeft < historicDaysFilter) {
                         return (
                               <ClientData key={id} id={id} name={name} startDate={startDate} service={services.name}
                                     finishDate={finishDate} payment={payments.period} 
