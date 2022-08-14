@@ -2,17 +2,19 @@ import { useContext, useState, useEffect } from "react";
 import { UserContext } from "../../contexts/userContext";
 import Header from "../../components/Header";
 import Footer from "./../../components/Footer";
-import { Container, Title } from "./style";
+import { Container, Title } from "./../Main/style";
 import { getAllClients } from "../../services/api";
 import ClientData from "./clientData";
 import { Oval } from 'react-loader-spinner';
 
-function MainPage() {
+function HistoricPage() {
 
     const [postClient, setPostClients] = useState(false);
     const [clients, setClients] = useState();
     const [reloadPage, setReloadPage] = useState(false);
     const [filter, setFilter] = useState ("All");
+
+    const historicDaysFilter = 0;
 
     const { token } = useContext(UserContext);
 
@@ -51,7 +53,8 @@ function MainPage() {
             return (
                 clients.map(client => {
                     const { id, name, payments, services, startDate, finishDate, notification, daysLeft } = client;
-                    if ((services.name === filter || filter === "All") && daysLeft > -14) {
+                    console.log(daysLeft)
+                    if (daysLeft < historicDaysFilter) {
                         return (
                               <ClientData key={id} id={id} name={name} startDate={startDate} service={services.name}
                                     finishDate={finishDate} payment={payments.period} 
@@ -69,7 +72,7 @@ function MainPage() {
         <>
             <Header />
             <Container>
-                <Title>Alunos cadastrados</Title>
+                <Title>Histórico</Title>
                 {handleClients()}
             </Container>
             <Footer />  
@@ -77,4 +80,4 @@ function MainPage() {
     )
 }
 
-export default MainPage;
+export default HistoricPage;

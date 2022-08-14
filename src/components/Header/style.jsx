@@ -20,23 +20,16 @@ const SubContainer = styled.div`
     justify-content: space-between;
     align-items: center;     
 `
-const Hiperlink = styled.h3`
-    font-size: 15px;
-    font-weight: 700;
-    color: black;
-    cursor: pointer;
-`
 const Icon = styled.p`
-    font-size: var(--icon-size);
+    font-size: var(--icon-size-mobile);
 `
 const Logo = styled.img`
-     max-width: 100px; 
-     padding-top: 15px;
+     max-width: var(--logo-header-mobile);
+     padding-top: var(--logo-header-top);
 `
 export {
     Container,
     SubContainer,
     Logo,
-    Hiperlink,
     Icon
 }

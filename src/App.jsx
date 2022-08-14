@@ -4,6 +4,7 @@ import PrivateRoute from "./components/PrivateRoute";
 import Login from "./pages/Login";
 import SignUp from "./pages/SignUp";
 import Main from "./pages/Main";
+import Historic from "./pages/Historic";
 import InsertClientPage from "./pages/Insert";
 import UpdateClientPage from "./pages/Update";
 
@@ -24,6 +25,11 @@ function App() {
                         <Route path="/main" element={
                             <PrivateRoute>
                                 <Main />
+                            </PrivateRoute>
+                        }/>
+                           <Route path="/historic" element={
+                            <PrivateRoute>
+                                <Historic />
                             </PrivateRoute>
                         }/>
                          <Route path="/insert" element={

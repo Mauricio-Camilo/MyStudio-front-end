@@ -23,8 +23,6 @@ function ClientData(props) {
                 <h2><strong>Plano: </strong>{payment}</h2>
                 <h2><strong>Inicio: </strong>{startDate}</h2>
                 <h2><strong>Término: </strong>{finishDate}</h2>
-               
-               
             </ClientContainer>
         )
     }
@@ -60,7 +58,6 @@ function ClientData(props) {
     function handleButtons() {
         return (
             <>
-
                 <IconWhatsApp id="notification"selected={notification} 
                 onClick={() => sendWhatsAppMessage(name, daysLeft) }><RiWhatsappFill/></IconWhatsApp>
                 <IconDelete onClick={() => deleteClient(id)}><AiFillDelete/></IconDelete>

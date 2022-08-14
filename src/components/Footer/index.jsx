@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { Container, Icon, Logo } from "./style";
-import { GrLogout } from "react-icons/gr";
-import { GrAddCircle } from "react-icons/gr";
+import { IoHourglassOutline } from "react-icons/io5";
+import { ImHome } from "react-icons/im";
 import logo from "./../../assets/logo_semnome.svg";
 
 function Footer() {
@@ -18,8 +18,8 @@ function Footer() {
 
     return (
         <Container>
-            <Icon id="creation" onClick={() => navigate("/insert")}><GrAddCircle/></Icon>
-            <Icon id="logout" onClick={() => logout()}><GrLogout/></Icon>
+            <Icon id="main" onClick={() => navigate("/main")}><ImHome/></Icon>
+            <Icon id="historic" onClick={() => navigate("/historic")}><IoHourglassOutline/></Icon>
         </Container>
     )
 }

@@ -17,13 +17,9 @@ const Container = styled.div`
     }
 `
 const Icon = styled.p`
-    font-size: var(--icon-size);
-`
-const Logo = styled.img`
-     max-width: 100px; 
+    font-size: var(--icon-size-mobile);
 `
 export {
     Container,
-    Logo,
     Icon
 }

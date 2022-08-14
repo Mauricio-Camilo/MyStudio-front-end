@@ -6,24 +6,22 @@ import logo from "./../../assets/logo_semnome.svg";
 
 function Header() {
 
-     const navigate = useNavigate();
+    const navigate = useNavigate();
 
-     function logout () {
-         const checkLogout = window.confirm("Deseja mesmo sair?")
-         if (checkLogout) {
-             localStorage.removeItem("token");
-             navigate("/");
-         }
-     }
+    function logout() {
+        const checkLogout = window.confirm("Deseja mesmo sair?")
+        if (checkLogout) {
+            localStorage.removeItem("token");
+            navigate("/");
+        }
+    }
 
     return (
         <Container>
             <SubContainer>
-            <Icon id="creation" onClick={() => navigate("/insert")}><GrAddCircle/></Icon>
-            <Logo src={logo} id="main" onClick={() => navigate("/main")}></Logo>
-
-            {/* <Hiperlink id="main" onClick={() => navigate("/main")}>Símbolo</Hiperlink> */}
-            <Icon id="logout" onClick={() => logout()}><GrLogout/></Icon>
+                <Icon id="creation" onClick={() => navigate("/insert")}><GrAddCircle /></Icon>
+                <Logo src={logo} id="main" onClick={() => navigate("/historic")}></Logo>
+                <Icon id="logout" onClick={() => logout()}><GrLogout /></Icon>
             </SubContainer>
         </Container>
     )
