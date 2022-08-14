@@ -12,9 +12,10 @@ function MainPage() {
     const [postClient, setPostClients] = useState(false);
     const [clients, setClients] = useState();
     const [reloadPage, setReloadPage] = useState(false);
-    const [filter, setFilter] = useState ("All");
 
-    const { token } = useContext(UserContext);
+    const { filter, setFilter, token } = useContext(UserContext);
+
+    console.log(filter);
 
     const config = {
         headers: {
@@ -51,7 +52,7 @@ function MainPage() {
             return (
                 clients.map(client => {
                     const { id, name, payments, services, startDate, finishDate, notification, daysLeft } = client;
-                    if ((services.name === filter || filter === "All") && daysLeft > -14) {
+                    if ((services.name === filter || filter === "Todos") && daysLeft > -14) {
                         return (
                               <ClientData key={id} id={id} name={name} startDate={startDate} service={services.name}
                                     finishDate={finishDate} payment={payments.period} 

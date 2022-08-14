@@ -18,7 +18,6 @@ const Container = styled.div`
         margin-top: var(--height-header-desktop);
     }
 `
-
 const Title = styled.h1`
     font-size: var(--main-title-size);
     text-align: center;
