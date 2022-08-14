@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const Container = styled.div`
     width: 100%;
-    height: var(--height-header);
+    height: var(--height-header-mobile);
     display: flex;
     justify-content: center;
     background-color: #4fea17;
@@ -10,6 +10,14 @@ const Container = styled.div`
     top: 0;
     left: 0;
     z-index: 5;
+
+    @media (max-width: 450px) {
+        height: var(--height-header-mobile);
+    }
+
+    @media (min-width: 450px) {
+        height: var(--height-header-desktop);
+    }
 `
 
 const SubContainer = styled.div`

@@ -5,9 +5,18 @@ const Container = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: var(--height-header);
+    margin-top: var(--height-header-mobile);
     padding-bottom: 25px;
     background: var(--container-background);
+
+    @media (max-width: 450px) {
+        margin-top: var(--height-header-mobile);
+        margin-bottom: var(--height-header-mobile);
+    }
+
+    @media (min-width: 450px) {
+        margin-top: var(--height-header-desktop);
+    }
 `
 
 const Title = styled.h1`
@@ -23,14 +32,12 @@ const Inputs = styled.div`
     flex-direction: column;
     gap: var(--inputs-gap);
 `
-
 const Input = styled.input`
     width: var(--inputs-width);
     height: var(--inputs-height);
     border-radius: var(--inputs-radius);
     padding-left: var(--inputs-padding-left);
 `
-
 const SelectSection = styled.div`
     display: flex;
     justify-content: center;
@@ -38,7 +45,6 @@ const SelectSection = styled.div`
     gap: var(--select-gap);
     width: 350px;
 `
-
 const Select = styled.div`
     width: var(--select-width);
     height: var(--select-heigth);
@@ -66,7 +72,6 @@ const Button = styled.button`
     pointer-events: ${(props) => props.selected? "none" : "auto"};
     cursor: pointer;
 `
-
 export {
     Container,
     Title,

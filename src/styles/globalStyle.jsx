@@ -60,7 +60,9 @@ strong {
   --color-3: green;
 
   --width-mobile: 375px;
-  --height-header: 50px;
+  --height-header-mobile: 50px;
+  --height-header-desktop: 75px;
+
   --container-margin-top: -25px;
   /* --container-background: linear-gradient(
         135deg,
@@ -95,7 +97,7 @@ strong {
   --button-text-color:#FFFFFF;
 
   --icon-size-mobile: 20px;
-  --icon-size-desktop: 30px;
+  --icon-size-desktop: 25px;
 
   --logo-header-mobile: 75px;
   --logo-header-top: 10px;
