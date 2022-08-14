@@ -1,12 +1,10 @@
 import { useNavigate } from "react-router-dom";
+import { useContext, useState } from "react";
+import { UserContext } from "../../contexts/userContext";
 import { Container, SubContainer, Icon, SearchBar, Services, SearchIcon } from "./style";
-
 import { IoHourglassOutline } from "react-icons/io5";
 import { ImHome } from "react-icons/im";
 import { BiChevronUpCircle } from "react-icons/bi";
-
-import { useContext, useState } from "react";
-import { UserContext } from "../../contexts/userContext";
 
 function Footer() {
 
@@ -18,6 +16,11 @@ function Footer() {
 
      const {filter, setFilter} = useContext(UserContext);
 
+     function activateSelectedService (service) {
+        setVisible(false);
+        setFilter(service);
+     }
+
     return (
         <Container>
             <SubContainer>
@@ -28,7 +31,7 @@ function Footer() {
                 <Services visible={visible}>
                     {services.map(service => {
                         return (
-                            <p onClick={() => setFilter(service)}>{service}</p>
+                            <p onClick={() => activateSelectedService(service)}>{service}</p>
                         )
                     })}
                 </Services>

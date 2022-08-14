@@ -13,7 +13,7 @@ function ClientData(props) {
 
     function handleClient() {
         return (
-            <ClientContainer>
+            <ClientContainer key={id}>
                  {/* {notification === true? 
                 <h1>
                     <strong>Atualizar</strong>
@@ -34,7 +34,6 @@ function ClientData(props) {
             window.location.reload();
         }
     }
-
 
     function sendWhatsAppMessage (name, daysLeft) {
         if (daysLeft <= 0) {

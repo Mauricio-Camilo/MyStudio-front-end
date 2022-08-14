@@ -12,10 +12,9 @@ function MainPage() {
     const [postClient, setPostClients] = useState(false);
     const [clients, setClients] = useState();
     const [reloadPage, setReloadPage] = useState(false);
-
     const daysLeftFilter = -14;
 
-    const { filter, setFilter, token } = useContext(UserContext);
+    const { filter, token } = useContext(UserContext);
 
     const config = {
         headers: {
@@ -24,7 +23,6 @@ function MainPage() {
     }
 
     useEffect(() => {
-
         setPostClients(true);
         setReloadPage(false);
 
@@ -45,36 +43,35 @@ function MainPage() {
     }, [token]);
 
     function handleClients() {
-        if (postClient) return <Oval color="#FFFFFF" height={80} width={80} secondaryColor="#20ACDE"/>
-        ;
+        if (postClient) return <Oval color="#FFFFFF" height={80} width={80} secondaryColor="#20ACDE" />
+            ;
         if (reloadPage) {
             return (
                 clients.map(client => {
                     const { id, name, payments, services, startDate, finishDate, notification, daysLeft } = client;
                     if ((services.name === filter || filter === "Todos") && daysLeft > daysLeftFilter) {
                         return (
-                              <ClientData key={id} id={id} name={name} startDate={startDate} service={services.name}
-                                    finishDate={finishDate} payment={payments.period} 
-                                    notification={notification} daysLeft={daysLeft}/>
-                        ) 
+                            <ClientData key={id} id={id} name={name} startDate={startDate} service={services.name}
+                                finishDate={finishDate} payment={payments.period}
+                                notification={notification} daysLeft={daysLeft} />
+                        )
                     }
-                    else return <></>  
+                    else return <></>;
                 })
             )
-        } else 
+        } else
             return <h1>Não há alunos cadastrados ainda!!!</h1>
     }
-
-    return (
-        <>
-            <Header />
-            <Container>
-                <Title>Alunos cadastrados</Title>
-                {handleClients()}
-            </Container>
-            <Footer />  
-        </>
-    )
+        return (
+            <>
+                <Header />
+                <Container>
+                    <Title>Alunos cadastrados</Title>
+                    {handleClients()}
+                </Container>
+                <Footer />
+            </>
+        )
 }
 
 export default MainPage;

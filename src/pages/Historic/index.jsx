@@ -23,7 +23,6 @@ function HistoricPage() {
     }
 
     useEffect(() => {
-
         setPostClients(true);
         setReloadPage(false);
 

@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { SubContainer, ClientContainer, IconUpdate, IconDelete } from "./../Main/style";
+import { ClientContainer, IconUpdate, IconDelete } from "./../Main/style";
 import { HistoricSubContainer } from "./style";
 import { deleteClientById } from "./../../services/api";
 import { MdCreate } from "react-icons/md";
@@ -7,7 +7,7 @@ import { AiFillDelete } from "react-icons/ai";
 
 function ClientData(props) {
 
-    const { id, name, startDate, service, finishDate, payment, notification, daysLeft } = props;
+    const { id, name, startDate, service, finishDate, payment, notification } = props;
 
     const navigate = useNavigate();
 
