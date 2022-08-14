@@ -34,10 +34,15 @@ const Inputs = styled.div`
     gap: var(--inputs-gap);
 `
 const Input = styled.input`
+    font-size: var(--inputs-font-size);
     width: var(--inputs-width);
     height: var(--inputs-height);
     border-radius: var(--inputs-radius);
     padding-left: var(--inputs-padding-left);
+    &::placeholder {
+        font-size: 15px;
+        color: gray;
+    }
 `
 const SelectSection = styled.div`
     display: flex;

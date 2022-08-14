@@ -83,10 +83,10 @@ function InsertClientPage() {
     function handleInputs() {
         return (
             <Inputs>
-                <Input id="name" type="text" placeholder="Nome"
+                <Input id="name" type="text" placeholder="Nome" required
                     onChange={(e) => setName(e.target.value)} value={name}>
                 </Input>
-                <Input id="startdate" type="text" placeholder="Data de início Ex:01/01/2023"
+                <Input id="startdate" type="text" placeholder="Data de início Ex:01/01/2023" required
                     onChange={(e) => setDate(e.target.value)} value={date}>
                 </Input>
             </Inputs>
@@ -115,10 +115,10 @@ function InsertClientPage() {
 
     function handleServices() {
         const services = [
-            { option: "Pilates", id: "1" },
-            { option: "Fisioterapia", id: "2" },
-            { option: "Barras", id: "3" },
-            { option: "Osteopatia", id: "4" },
+            { option: "Pilates", id: "5" },
+            { option: "Fisioterapia", id: "6" },
+            { option: "Barras", id: "7" },
+            { option: "Osteopatia", id: "8" },
         ];
         return (
             services.map(service => {

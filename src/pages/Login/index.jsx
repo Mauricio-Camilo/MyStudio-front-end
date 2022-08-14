@@ -48,10 +48,10 @@ function Login () {
 
             <form onSubmit={handleLogin}>
                 <Inputs>
-                    <Input id="login" type="text" placeholder="CPF"
+                    <Input id="login" type="text" placeholder="CPF" required
                         onChange={(e) => setCpf(e.target.value)} value={cpf}>
                     </Input>
-                    <Input id="password" type="password" placeholder="Senha"
+                    <Input id="password" type="password" placeholder="Senha" required
                         onChange={(e) => setPassword(e.target.value)} value={password}>
                     </Input>
                     <Button type="submit">{login}</Button>

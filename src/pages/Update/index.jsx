@@ -71,10 +71,10 @@ function UpdateClientPage() {
     function handleInputs() {
         return (
         <Inputs>
-            <Input id="name" type="text" placeholder="Nome"
+            <Input id="name" type="text" placeholder="Nome" 
                 onChange={(e) => setName(e.target.value)} value={name}>
             </Input>
-            <Input id="date" type="text" placeholder="Data de início Ex:01/01/2023"
+            <Input id="date" type="text" placeholder="Data de início Ex:01/01/2023" 
                 onChange={(e) => setDate(e.target.value)} value={date}>
             </Input>
         </Inputs>
@@ -83,10 +83,10 @@ function UpdateClientPage() {
 
     function handlePayments() {
         const payments = [
-            { option: "Mensal", icon: "card-outline", id: "1" },
-            { option: "Trimestral", icon: "barcode-outline", id: "2" },
-            { option: "Semestral", icon: "cash-outline", id: "3" },
-            { option: "Anual", icon: "cash-outline", id: "4" },
+            { option: "Mensal", id: "1" },
+            { option: "Trimestral", id: "2" },
+            { option: "Semestral", id: "3" },
+            { option: "Anual", id: "4" },
         ]
         return (
             payments.map(payment => {

@@ -31,7 +31,7 @@ function Footer() {
                 <Services visible={visible}>
                     {services.map(service => {
                         return (
-                            <p onClick={() => activateSelectedService(service)}>{service}</p>
+                            <p key={service} onClick={() => activateSelectedService(service)}>{service}</p>
                         )
                     })}
                 </Services>
