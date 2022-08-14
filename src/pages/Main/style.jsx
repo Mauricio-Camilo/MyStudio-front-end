@@ -10,6 +10,10 @@ const Container = styled.div`
     margin-top: var(--height-header);
     padding-bottom: 50px;
     background: var(--container-background);
+
+    @media (max-width: 450px) {
+        margin-bottom: var(--height-header);
+    }
 `
 
 const Title = styled.h1`
@@ -23,13 +27,14 @@ const Title = styled.h1`
 
 const SubContainer = styled.div`
     min-width: var(--subcontainer-width);
+    max-width: var(--subcontainer-max-width);
     width: 80%;
-    border: 3px solid white;
+    border: ${(props) => props.selected ? "3px solid red" : "3px solid #90388C"};
     display: flex;
     gap: 10px;
     padding: 10px 0;
     position: relative;
-    background-color: ${(props) => props.selected ? "red" : "none"};
+    background-color: ${(props) => props.selected ? "#4fea17" : "none"};
 
         div {
             display: flex;
@@ -44,6 +49,13 @@ const SubContainer = styled.div`
 
 const ClientContainer = styled.div`
     padding-left: 15px;
+    max-width: 700px;
+    word-wrap: break-word;
+
+    @media (max-width: 400px) {
+        max-width: 300px;
+        word-wrap: break-word;
+    }
 `
 
 const IconWhatsApp = styled.p`
@@ -52,21 +64,20 @@ const IconWhatsApp = styled.p`
     color: #41A918;
     background-color: white;
     position: absolute;
-    top: 10px;
+    top: 20px;
     right: 10px;
 `
 
 const IconDelete= styled.p`
     font-size: var(--icon-size);
-    color: #FFFFFF;
     position: absolute;
-    top: 50px;
+    top: 70px;
     right: 10px;
 `
 const IconUpdate = styled.p`
     font-size: var(--icon-size);
     position: absolute;
-    top: 90px;
+    top: 120px;
     right: 10px;
 `
 

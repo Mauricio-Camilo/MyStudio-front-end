@@ -5,7 +5,7 @@ import { updateClientById } from "../../services/api";
 
 import { ThreeDots } from 'react-loader-spinner';
 
-import { Container, Title, Inputs, Input, SelectSection, Payment, Button, } from "./../Insert/style"
+import { Container, Title, Inputs, Input, Select, SelectSection, Button, } from "./../Insert/style"
 
 function UpdateClientPage() {
 
@@ -92,9 +92,9 @@ function UpdateClientPage() {
                 const { option, id } = payment;
                 const checkSelectedPayment = selectedPayment.has(option)
                 return (
-                    <Payment key={id} selected={checkSelectedPayment} onClick={() => activatePayment(option)}>
+                    <Select key={id} selected={checkSelectedPayment} onClick={() => activatePayment(option)}>
                         <p>{option}</p>
-                    </Payment>
+                    </Select>
                 )
             })
         )
@@ -112,9 +112,9 @@ function UpdateClientPage() {
                 const { option, id } = service;
                 const checkSelectedService = selectedService.has(option)
                 return (
-                    <Payment key={id} selected={checkSelectedService} onClick={() => activateService(option)}>
+                    <Select key={id} selected={checkSelectedService} onClick={() => activateService(option)}>
                         <p>{option}</p>
-                    </Payment>
+                    </Select>
                 )
             })
         )

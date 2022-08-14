@@ -1,10 +1,10 @@
 import { useNavigate } from "react-router-dom";
-import { Container, SubContainer, Icon, Logo } from "./style";
+import { Container, Icon, Logo } from "./style";
 import { GrLogout } from "react-icons/gr";
 import { GrAddCircle } from "react-icons/gr";
 import logo from "./../../assets/logo_semnome.svg";
 
-function Header() {
+function Footer() {
 
      const navigate = useNavigate();
 
@@ -18,15 +18,10 @@ function Header() {
 
     return (
         <Container>
-            <SubContainer>
             <Icon id="creation" onClick={() => navigate("/insert")}><GrAddCircle/></Icon>
-            <Logo src={logo} id="main" onClick={() => navigate("/main")}></Logo>
-
-            {/* <Hiperlink id="main" onClick={() => navigate("/main")}>Símbolo</Hiperlink> */}
             <Icon id="logout" onClick={() => logout()}><GrLogout/></Icon>
-            </SubContainer>
         </Container>
     )
 }
 
-export default Header;
+export default Footer;

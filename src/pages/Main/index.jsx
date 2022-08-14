@@ -1,6 +1,7 @@
 import { useContext, useState, useEffect } from "react";
 import { UserContext } from "../../contexts/userContext";
 import Header from "../../components/Header";
+import Footer from "./../../components/Footer";
 import { Container, Title } from "./style";
 import { getAllClients } from "../../services/api";
 import ClientData from "./clientData";
@@ -11,6 +12,7 @@ function MainPage() {
     const [postClient, setPostClients] = useState(false);
     const [clients, setClients] = useState();
     const [reloadPage, setReloadPage] = useState(false);
+    const [filter, setFilter] = useState ("All");
 
     const { token } = useContext(UserContext);
 
@@ -49,11 +51,14 @@ function MainPage() {
             return (
                 clients.map(client => {
                     const { id, name, payments, services, startDate, finishDate, notification, daysLeft } = client;
-                    return (
-                          <ClientData key={id} id={id} name={name} startDate={startDate} service={services.name}
-                                finishDate={finishDate} payment={payments.period} 
-                                notification={notification} daysLeft={daysLeft}/>
-                    )
+                    if ((services.name === filter || filter === "All") && daysLeft > -14) {
+                        return (
+                              <ClientData key={id} id={id} name={name} startDate={startDate} service={services.name}
+                                    finishDate={finishDate} payment={payments.period} 
+                                    notification={notification} daysLeft={daysLeft}/>
+                        ) 
+                    }
+                    else return <></>  
                 })
             )
         } else {
@@ -71,8 +76,8 @@ function MainPage() {
                 <Title>Alunos cadastrados</Title>
                 {handleClients()}
             </Container>
+            <Footer />  
         </>
-
     )
 }
 

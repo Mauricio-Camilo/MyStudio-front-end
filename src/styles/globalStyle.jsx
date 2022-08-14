@@ -62,19 +62,21 @@ strong {
   --width-mobile: 375px;
   --height-header: 75px;
   --container-margin-top: -25px;
-  --container-background: linear-gradient(
+  /* --container-background: linear-gradient(
         135deg,
         rgba(121, 9, 9, 0.4) 15%,
         rgba(9, 9, 121, 1) 45%,
         rgba(0, 212, 255, 1) 100%
-    );
+    ); */
+    --container-background: white;
 
   --main-title-size: 32px;
   --title-margin-top: 15px;
   --title-margin-bottom: 24px;
-  --title-font-color: #FFFFFF;
+  --title-font-color: #000000;
 
   --subcontainer-width: 350px;
+  --subcontainer-max-width: 700px;
   --subcontainer-border: 3px solid blue;
   --subcontainer-div-gap: 10px;
   --subcontainer-font-size: 20px;
@@ -94,11 +96,12 @@ strong {
 
   --icon-size: 25px;
 
-  --payment-width: 150px;
-  --payment-heigth: 75px;
-  --payment-background: #ffa920;
-  --payment-gap: 20px;
-  --payment-radius: 5px;
+  --select-width: 150px;
+  --select-heigth: 75px;
+  --select-color: white;
+  --select-background: #87287d;
+  --select-gap: 20px;
+  --select-radius: 5px;
 
 
 }

@@ -4,7 +4,7 @@ import Header from "../../components/Header";
 import { useNavigate } from "react-router-dom";
 import { postClient } from "../../services/api";
 
-import { Container, Title, Inputs, Input, SelectSection, Payment, Button, } from "./style"
+import { Container, Title, Inputs, Input, SelectSection, Select, Button, } from "./style"
 
 import { ThreeDots } from 'react-loader-spinner';
 
@@ -54,9 +54,10 @@ function InsertClientPage() {
     }
 
     async function createClient() {
-        if ([...selectedPayment.keys()][0] === undefined) {
-            alert("Selecione um plano antes de prosseguir com o cadastro");
+        if ([...selectedPayment.keys()][0] === undefined || [...selectedService.keys()][0] === undefined) {
+            alert("Selecione todas as opções de prosseguir com o cadastro");
         }
+
         else {
             setSelected(true);
             setSignUp(loading);
@@ -103,9 +104,9 @@ function InsertClientPage() {
                 const { option, id } = payment;
                 const checkSelectedPayment = selectedPayment.has(option)
                 return (
-                    <Payment key={id} selected={checkSelectedPayment} onClick={() => activatePayment(option)}>
+                    <Select key={id} selected={checkSelectedPayment} onClick={() => activatePayment(option)}>
                         <p>{option}</p>
-                    </Payment>
+                    </Select>
                 )
             })
         )
@@ -123,9 +124,9 @@ function InsertClientPage() {
                 const { option, id } = service;
                 const checkSelectedService = selectedService.has(option)
                 return (
-                    <Payment key={id} selected={checkSelectedService} onClick={() => activateService(option)}>
+                    <Select key={id} selected={checkSelectedService} onClick={() => activateService(option)}>
                         <p>{option}</p>
-                    </Payment>
+                    </Select>
                 )
             })
         )

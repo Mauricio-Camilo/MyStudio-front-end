@@ -35,19 +35,20 @@ const SelectSection = styled.div`
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: var(--payment-gap);
+    gap: var(--select-gap);
     width: 350px;
 `
 
-const Payment = styled.div`
-    width: var(--payment-width);
-    height: var(--payment-heigth);
+const Select = styled.div`
+    width: var(--select-width);
+    height: var(--select-heigth);
+    color: var(--select-color);
     display: flex;
     justify-content: center;
     align-items: center; 
-    background-color: var(--payment-background);
-    border: ${(props) => props.selected? "3px solid red" : "none"};
-    border-radius: var(--payment-radius);
+    background-color: var(--select-background);
+    border: ${(props) => props.selected? "3px solid #4fea17" : "none"};
+    border-radius: var(--select-radius);
     cursor: pointer;
 `
 const Button = styled.button`
@@ -72,6 +73,6 @@ export {
     Input,
     Inputs,
     SelectSection,
-    Payment,
+    Select,
     Button
 }
