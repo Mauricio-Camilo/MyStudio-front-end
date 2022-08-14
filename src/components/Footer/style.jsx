@@ -30,6 +30,7 @@ const SubContainer = styled.div`
 `
 const Icon = styled.p`
      font-size: var(--icon-size-mobile);
+     cursor: pointer;
 
 @media (min-width: 450px) {
     font-size: var(--icon-size-desktop);
@@ -39,19 +40,20 @@ const SearchIcon = styled.p`
     font-size: var(--icon-size-desktop);
     position: absolute;
     right: 10px;
-    top: 4px;
+    top: 10px;
+    cursor: pointer;
 
     @media (max-width: 450px) {
-        font-size: 15px;
-        right: 3px;
-        top: 4px;
+        font-size: 20px;
+        right: 5px;
+        top: 8px;
     }
 `
 
 const SearchBar = styled.div`
     max-width: 400px;
     width: 80%;
-    height: 40px;
+    height: 50px;
     border-radius: 5px;
     border: 1px solid black;
     background-color: white;
@@ -71,12 +73,10 @@ const SearchBar = styled.div`
         }
 
         @media (max-width: 450px) {
-        width: 200px;
-        height: 25px;
+        width: var(--footer-search-width-mobile);
+        height: var(--footer-search-height-mobile);
     }   
-     
 `
-
 const Services = styled.div`
     width: 100%;
     height: 100px;
@@ -99,15 +99,16 @@ const Services = styled.div`
 
      p {
         font-size: 25px;
-        margin: 10px 0;
+        margin: 20px 0;
 
          @media (max-width: 450px) {
             font-size: 15px;
+            margin: 15px 0;
         }  
      }
 
      @media (max-width: 450px) {
-        width: 200px;
+        width: var(--footer-search-width-mobile);
         height: 50px;
         right: -1px;
         bottom: 20px;

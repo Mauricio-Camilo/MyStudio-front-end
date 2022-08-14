@@ -9,7 +9,7 @@ const Container = styled.div`
     gap: 25px;
     margin-top: var(--height-header-mobile);
     padding-bottom: 50px;
-    /* background: var(--container-background); */
+    background: var(--container-background);
 
     @media (max-width: 450px) {
         margin-top: var(--height-header-mobile);
@@ -52,26 +52,32 @@ const SubContainer = styled.div`
             font-size: var(--subcontainer-font-size);
         }
 `
-
 const ClientContainer = styled.div`
     padding-left: 15px;
     max-width: 700px;
-    word-wrap: break-word;
+    word-wrap: break-word;  
+    position: relative;
+
+        h1 {
+            font-size: 25px;
+            position: absolute;
+            left: 300px;
+        }
 
     @media (max-width: 400px) {
         max-width: 300px;
         word-wrap: break-word;
     }
 `
-
 const IconWhatsApp = styled.p`
     display: ${(props) => props.selected? "block" : "none"};
     font-size: var(--icon-size-desktop);
     color: #41A918;
     background-color: white;
     position: absolute;
-    top: 120px;
+    top: 110px;
     right: 20px;
+    cursor: pointer;
 
     @media (max-width: 450px) {
         font-size: var(--icon-size-mobile);
@@ -82,8 +88,10 @@ const IconWhatsApp = styled.p`
 const IconDelete= styled.p`
     font-size: var(--icon-size-desktop);
     position: absolute;
-    top: 70px;
+    top: 60px;
     right: 20px;
+    cursor: pointer;
+
     @media (max-width: 450px) {
         font-size: var(--icon-size-mobile);
         right: 15px;
@@ -92,8 +100,10 @@ const IconDelete= styled.p`
 const IconUpdate = styled.p`
     font-size: var(--icon-size-desktop);
     position: absolute;
-    top: 20px;
+    top: 10px;
     right: 20px;
+    cursor: pointer;
+
     @media (max-width: 450px) {
         font-size: var(--icon-size-mobile);
         right: 15px;

@@ -16,6 +16,7 @@ const Container = styled.div`
 
     @media (min-width: 450px) {
         margin-top: var(--height-header-desktop);
+        margin-bottom: var(--height-header-desktop);
     }
 `
 const Title = styled.h1`
@@ -25,7 +26,6 @@ const Title = styled.h1`
     margin-top: var(--title-margin-top);
     margin-bottom: var(--title-margin-bottom);
     width: var(--subcontainer-width);
-
 `
 
 const Inputs = styled.div`
@@ -57,6 +57,17 @@ const Select = styled.div`
     border: ${(props) => props.selected? "3px solid #4fea17" : "none"};
     border-radius: var(--select-radius);
     cursor: pointer;
+
+        p {
+            font-size: 20px;
+            font-weight: 500;
+
+            /* @media (max-width: 450px) {
+                font-size: 20px;
+                font-weight: 500;
+            } */
+          
+        }
 `
 const Button = styled.button`
     width: var(--inputs-width);

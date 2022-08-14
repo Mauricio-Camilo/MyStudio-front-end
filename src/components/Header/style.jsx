@@ -30,6 +30,7 @@ const SubContainer = styled.div`
 `
 const Icon = styled.p`
     font-size: var(--icon-size-mobile);
+    cursor: pointer;
 
     @media (min-width: 450px) {
         font-size: var(--icon-size-desktop);

@@ -14,11 +14,11 @@ function ClientData(props) {
     function handleClient() {
         return (
             <ClientContainer>
-                 {notification === true? 
-                <h2>
-                    <strong>Nome: </strong>{name} <strong>CHECK</strong>
-                </h2> : 
-                <h2><strong>Nome: </strong>{name}</h2>}
+                 {/* {notification === true? 
+                <h1>
+                    <strong>Atualizar</strong>
+                </h1> : <></>} */}
+                <h2><strong>Nome: </strong>{name}</h2>
                 <h2><strong>Serviço: </strong>{service}</h2>
                 <h2><strong>Plano: </strong>{payment}</h2>
                 <h2><strong>Início: </strong>{startDate}</h2>

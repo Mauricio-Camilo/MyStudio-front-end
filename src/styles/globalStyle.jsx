@@ -60,8 +60,8 @@ strong {
   --color-3: green;
 
   --width-mobile: 375px;
-  --height-header-mobile: 40px;
-  --height-header-desktop: 60px;
+  --height-header-mobile: 50px;
+  --height-header-desktop: 70px;
 
   --container-margin-top: -25px;
   /* --container-background: linear-gradient(
@@ -96,7 +96,7 @@ strong {
   --button-font-weight: 700;
   --button-text-color:#FFFFFF;
 
-  --icon-size-mobile: 20px;
+  --icon-size-mobile: 25px;
   --icon-size-desktop: 30px;
 
   --logo-header-mobile: 70px;
@@ -109,8 +109,8 @@ strong {
   --select-gap: 20px;
   --select-radius: 5px;
 
-  --footer-search-width: 100px;
-
+  --footer-search-width-mobile: 200px;
+  --footer-search-height-mobile: 40px;
 }
 
 body {
