@@ -29,15 +29,6 @@ const Input = styled.input`
     font-size: 20px;
     color: gray;
   }
-
-  /* @media (min-width: 376px){
-    background-color: white;
-
-    font-size: var(--inputs-font-size);
-    width: var(--inputs-width);
-    height: var(--inputs-height);
-  } */
-
 `
 const Button = styled.button`
     width: var(--inputs-width);

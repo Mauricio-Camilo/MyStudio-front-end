@@ -7,7 +7,7 @@ const Container = styled.div`
     align-items: center;
     margin-top: var(--height-header-mobile);
     padding-bottom: 25px;
-    background: var(--container-background);
+    /* background: var(--container-background); */
 
     @media (max-width: 450px) {
         margin-top: var(--height-header-mobile);
@@ -24,6 +24,8 @@ const Title = styled.h1`
     color: var(--title-font-color);
     margin-top: var(--title-margin-top);
     margin-bottom: var(--title-margin-bottom);
+    width: var(--subcontainer-width);
+
 `
 
 const Inputs = styled.div`
@@ -42,7 +44,7 @@ const SelectSection = styled.div`
     justify-content: center;
     flex-wrap: wrap;
     gap: var(--select-gap);
-    width: 350px;
+    width: var(--subcontainer-width);
 `
 const Select = styled.div`
     width: var(--select-width);

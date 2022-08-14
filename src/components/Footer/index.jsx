@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
-import { Container, Icon, SearchBar, Services, SearchIcon } from "./style";
+import { Container, SubContainer, Icon, SearchBar, Services, SearchIcon } from "./style";
+
 import { IoHourglassOutline } from "react-icons/io5";
 import { ImHome } from "react-icons/im";
 import { BiChevronUpCircle } from "react-icons/bi";
@@ -15,13 +16,14 @@ function Footer() {
 
      const services = ["Todos","Pilates","Fisioterapia","Barras","Osteopatia"]
 
-     const {setFilter} = useContext(UserContext);
+     const {filter, setFilter} = useContext(UserContext);
 
     return (
         <Container>
+            <SubContainer>
             <Icon id="main" onClick={() => navigate("/main")}><ImHome/></Icon>
             <SearchBar>
-                <h3>Selecione o serviço</h3>
+                <h3>{filter}</h3>
                 <SearchIcon id="search" onClick={() => setVisible(!visible)}><BiChevronUpCircle/></SearchIcon>
                 <Services visible={visible}>
                     {services.map(service => {
@@ -32,6 +34,7 @@ function Footer() {
                 </Services>
             </SearchBar>
             <Icon id="historic" onClick={() => navigate("/historic")}><IoHourglassOutline/></Icon>
+            </SubContainer>
         </Container>
     )
 }

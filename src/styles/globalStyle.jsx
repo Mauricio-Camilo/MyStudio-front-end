@@ -60,8 +60,8 @@ strong {
   --color-3: green;
 
   --width-mobile: 375px;
-  --height-header-mobile: 50px;
-  --height-header-desktop: 75px;
+  --height-header-mobile: 40px;
+  --height-header-desktop: 60px;
 
   --container-margin-top: -25px;
   /* --container-background: linear-gradient(
@@ -99,7 +99,7 @@ strong {
   --icon-size-mobile: 20px;
   --icon-size-desktop: 30px;
 
-  --logo-header-mobile: 75px;
+  --logo-header-mobile: 70px;
   --logo-header-top: 10px;
 
   --select-width: 150px;
@@ -109,7 +109,7 @@ strong {
   --select-gap: 20px;
   --select-radius: 5px;
 
-  --footer-search-width: 200px;
+  --footer-search-width: 100px;
 
 }
 

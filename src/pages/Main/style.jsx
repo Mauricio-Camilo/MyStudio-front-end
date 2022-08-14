@@ -9,7 +9,7 @@ const Container = styled.div`
     gap: 25px;
     margin-top: var(--height-header-mobile);
     padding-bottom: 50px;
-    background: var(--container-background);
+    /* background: var(--container-background); */
 
     @media (max-width: 450px) {
         margin-top: var(--height-header-mobile);
@@ -18,6 +18,7 @@ const Container = styled.div`
 
     @media (min-width: 450px) {
         margin-top: var(--height-header-desktop);
+        margin-bottom: var(--height-header-desktop);
     }
 `
 

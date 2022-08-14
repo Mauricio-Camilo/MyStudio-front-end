@@ -41,7 +41,7 @@ function ClientData(props) {
             const sendMessage = window.confirm(`Deseja avisar pelo whatsapp que finalizou o 
             plano do aluno ${name}?`);
             if (sendMessage) {
-                const whastAppMessage = `Finalizou o plano do aluno ${name}`
+                const whastAppMessage = `Finalizou o plano do aluno ${name} há ${daysLeft*-1} dias`
                 window.open(`https://wa.me/5511972665730?text=${encodeURIComponent(whastAppMessage)}`);
             }
         }
@@ -49,7 +49,7 @@ function ClientData(props) {
             const sendMessage = window.confirm(`Deseja avisar pelo whatsapp que está para acabar o 
             plano do aluno ${name}?`);
             if (sendMessage) {
-                const whastAppMessage = `O plano do aluno ${name} está para acabar`
+                const whastAppMessage = `O plano do aluno ${name} vai acabar em ${daysLeft} dias`
                 window.open(`https://wa.me/5511972665730?text=${encodeURIComponent(whastAppMessage)}`);
             }
         }
