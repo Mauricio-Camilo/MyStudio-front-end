@@ -46,15 +46,16 @@ const SearchBar = styled.div`
 
 const Services = styled.div`
     width: var(--footer-search-width);
-    height: 50px;
+    height: 75px;
     border: 1px solid black;
     border-radius: 5px;
     background-color: white;
-    bottom: 10px;
-    z-index: -1;
     padding: 10px;
     display: ${(props) => props.visible? "block": "none"};
     position: absolute;
+    right: -1px;
+    bottom: 20px;
+    z-index: -1;
     cursor: pointer;
     overflow-y: scroll; 
 
