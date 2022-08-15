@@ -19,42 +19,43 @@ describe("main page suit test", () => {
         const client = {
             name: "Cliente1",
             updatename: "Novo Cliente 1",
-            date: "01/01/2023"
+            date: "01/01/2023",
+            payment: "Mensal",
+            service: "Pilates"
         }
 
         cy.visit(`${URL_FRONT}/`);
         cy.get("#login").type(login.cpf);
         cy.get("#password").type(login.password);
-        cy.intercept("POST", `${URL_SERVER}/signin`).as("signin");
+        // cy.intercept("POST", `${URL_SERVER}/signin`).as("signin");
             cy.get("button").click();
-        cy.wait("@signin");
+        // cy.wait("@signin");
 
         cy.url().should("equal", `${URL_FRONT}/main`);
         cy.wait(1000);
         cy.get("#creation").click();
         cy.url().should("equal", `${URL_FRONT}/insert`);
 
-        cy.get("#name").type(client.name);
-        cy.get("#startdate").type(client.date);
-        cy.contains("Mensal").click();
-        cy.intercept("POST", `${URL_SERVER}/clients`).as("createClient");
-            cy.contains("Cadastrar").click();
-        cy.wait("@createClient");
+        cy.get("#name").type(client.name,{force: true});
+        cy.get("#startdate").type(client.date,{force: true});
+        cy.contains(client.payment).click({force: true});
+        cy.contains(client.service).click({force: true});
+        cy.contains("Cadastrar").click();
         cy.contains(client.name).should("be.visible");
+        cy.contains(client.payment).should("be.visible");
+        cy.contains(client.service).should("be.visible");
 
-        // cy.intercept("GET", `${URL_SERVER}/clients`).as("getClients");
-        // cy.wait("@getClients");
-        cy.contains("U").click();
-        cy.url().should("equal", `${URL_FRONT}/update/1`);
-        cy.get("#name").type(client.updatename);
-        cy.contains("Anual").click();
-        cy.intercept("PUT", `${URL_SERVER}/clients/1`).as("updateClient");
-            cy.contains("Atualizar").click();
-        cy.wait("@updateClient");
-        cy.contains(client.updatename).should("be.visible");
+        // cy.contains("U").click();
+        // cy.url().should("equal", `${URL_FRONT}/update/1`);
+        // cy.get("#name").type(client.updatename);
+        // cy.contains("Anual").click();
+        // cy.intercept("PUT", `${URL_SERVER}/clients/1`).as("updateClient");
+        //     cy.contains("Atualizar").click();
+        // cy.wait("@updateClient");
+        // cy.contains(client.updatename).should("be.visible");
 
-        cy.intercept("DELETE", `${URL_SERVER}/clients/1`).as("deleteClient");
-            cy.contains("X").click();
-        cy.wait("@deleteClient");
+        // cy.intercept("DELETE", `${URL_SERVER}/clients/1`).as("deleteClient");
+        //     cy.contains("X").click();
+        // cy.wait("@deleteClient");
     })
 })

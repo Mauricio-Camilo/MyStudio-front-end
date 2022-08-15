@@ -127,13 +127,13 @@ function UpdateClientPage() {
             <Container>
                 <Title>Atualize os dados do aluno</Title>
                 {handleInputs()}
-                <Title>Atualize o plano</Title>
-                <SelectSection>
-                    {handlePayments()}
-                </SelectSection>
                 <Title>Atualize o serviço</Title>
                 <SelectSection>
                     {handleServices()}
+                </SelectSection>
+                <Title>Atualize o plano</Title>
+                <SelectSection>
+                    {handlePayments()}
                 </SelectSection>
                 <Button selected={selected} onClick={() => updateClient()}>{signUp}</Button>
             </Container>

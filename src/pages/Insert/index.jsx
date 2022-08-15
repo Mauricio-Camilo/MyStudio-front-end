@@ -139,13 +139,13 @@ function InsertClientPage() {
             <Container>
                 <Title>Cadastre seu novo aluno</Title>
                 {handleInputs()}
-                <Title>Escolha o plano</Title>
-                <SelectSection>
-                    {handlePayments()}
-                </SelectSection>
                 <Title>Escolha o serviço</Title>
                 <SelectSection>
                     {handleServices()}
+                </SelectSection>
+                <Title>Escolha o plano</Title>
+                <SelectSection>
+                    {handlePayments()}
                 </SelectSection>
                 <Button selected={selected} onClick={() => createClient()}>{signUp}</Button>
             </Container>

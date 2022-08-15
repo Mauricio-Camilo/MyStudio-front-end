@@ -37,7 +37,7 @@ const SubContainer = styled.div`
     padding: 10px 0;
     display: flex;
     position: relative;
-    background-color: ${(props) => props.selected ? "#4fea17" : "none"};
+    background-color: ${(props) => props.selected ? "#ffd56b" : "none"};
 
         div {
             display: flex;
@@ -75,7 +75,6 @@ const IconWhatsApp = styled.p`
     display: ${(props) => props.selected? "block" : "none"};
     font-size: var(--icon-size-desktop);
     color: #41A918;
-    background-color: white;
     position: absolute;
     top: 110px;
     right: 20px;
