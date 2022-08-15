@@ -43,9 +43,7 @@ function Login () {
 
     return (
         <Container>
-            {/* <Title>MyStudio</Title> */}
             <Logo src={logo}></Logo>
-
             <form onSubmit={handleLogin}>
                 <Inputs>
                     <Input id="login" type="text" placeholder="CPF" required

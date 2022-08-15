@@ -7,7 +7,6 @@ const Container = styled.div`
     align-items: center;
     margin-top: var(--height-header-mobile);
     padding-bottom: 25px;
-    /* background: var(--container-background); */
 
     @media (max-width: 450px) {
         margin-top: var(--height-header-mobile);
@@ -66,12 +65,6 @@ const Select = styled.div`
         p {
             font-size: 20px;
             font-weight: 500;
-
-            /* @media (max-width: 450px) {
-                font-size: 20px;
-                font-weight: 500;
-            } */
-          
         }
 `
 const Button = styled.button`

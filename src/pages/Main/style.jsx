@@ -21,9 +21,7 @@ const Container = styled.div`
         margin-bottom: var(--height-header-desktop);
     }
 `
-
 const Title = styled.h1`
-    /* font-family: 'Saira Stencil One', cursive;  */
     font-size: var(--main-title-size);
     text-align: center;
     color: var(--title-font-color);
@@ -60,12 +58,6 @@ const ClientContainer = styled.div`
             font-size: 20px;
         }
 
-        /* h1 {
-            font-size: 25px;
-            position: absolute;
-            left: 300px;
-        } */
-
     @media (max-width: 400px) {
         max-width: 300px;
         word-wrap: break-word;
@@ -85,7 +77,6 @@ const IconWhatsApp = styled.p`
         right: 15px;
     }
 `
-
 const IconDelete= styled.p`
     font-size: var(--icon-size-desktop);
     position: absolute;
@@ -110,7 +101,6 @@ const IconUpdate = styled.p`
         right: 15px;
     }
 `
-
 export {
     Container,
     Title,

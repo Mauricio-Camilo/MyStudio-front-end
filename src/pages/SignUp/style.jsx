@@ -7,7 +7,6 @@ const Container = styled.div`
     flex-direction: column;
     align-items: center;
     margin-top: var(--container-margin-top);
-    /* background: linear-gradient(red,blue); */
     background: var(--container-background);
 `
 const Logo = styled.img`
@@ -44,7 +43,6 @@ const Button = styled.button`
     cursor: pointer;
 `
 const Hiperlink = styled.p`
-    /* width: 225px; */
     text-align: center;
     font-size: 15px;
     font-weight: 700;

@@ -64,13 +64,7 @@ strong {
   --height-header-desktop: 70px;
 
   --container-margin-top: -25px;
-  /* --container-background: linear-gradient(
-        135deg,
-        rgba(121, 9, 9, 0.4) 15%,
-        rgba(9, 9, 121, 1) 45%,
-        rgba(0, 212, 255, 1) 100%
-    ); */
-    --container-background: white;
+  --container-background: white;
 
   --main-title-size: 32px;
   --title-margin-top: 25px;
@@ -115,7 +109,8 @@ strong {
 }
 
 body {
-    background-color: var(--color-0);
+    background-color: var(--container-background);
+    font-family: 'Montserrat', sans-serif;
 }
 `
 export default GlobalStyle;

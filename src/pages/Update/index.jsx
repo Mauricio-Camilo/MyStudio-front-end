@@ -5,7 +5,6 @@ import { useNavigate, useParams } from "react-router-dom";
 import { updateClientById } from "../../services/api";
 
 import { ThreeDots } from 'react-loader-spinner';
-
 import { Container, Title, Inputs, Input, Select, SelectSection, Button, } from "./../Insert/style"
 
 function UpdateClientPage() {

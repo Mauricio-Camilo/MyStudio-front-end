@@ -3,7 +3,6 @@ import { useNavigate } from "react-router-dom";
 import { ThreeDots } from 'react-loader-spinner';
 
 import { makeSignUp } from "../../services/api";
-
 import { Container, Logo, Inputs, Input, Button, Hiperlink} from "./style";
 import logo from "./../../assets/logo.svg";
 
@@ -44,7 +43,6 @@ function SignUp() {
 
     return (
         <Container>
-            {/* <Title>MyStudio</Title> */}
             <Logo src={logo}></Logo>
             <form onSubmit={handleSignUp}>
                 <Inputs>

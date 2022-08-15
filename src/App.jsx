@@ -16,7 +16,6 @@ function App() {
     return (
         <>
             <GlobalStyle />
-
             <UserProvider>
                 <BrowserRouter>
                     <Routes>
