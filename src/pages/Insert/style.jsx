@@ -59,11 +59,6 @@ const Select = styled.div`
     justify-content: center;
     align-items: center; 
     background-color: ${(props) => props.selected? "#9dc4e8" : "#3515ed"};
-
-    /* 9dc4e8
-
-    3515ed */
-
     border: ${(props) => props.selected? "3px solid #4fea17" : "none"};
     border-radius: var(--select-radius);
     cursor: pointer;

@@ -1,4 +1,4 @@
-
+const URL = "https://mauricio-mystudio.herokuapp.com"
 
 Cypress.Commands.add("resetDatabase", () => {
     const deleteURL = "http://localhost:5000/tests/reset";

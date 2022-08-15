@@ -14,10 +14,6 @@ function ClientData(props) {
     function handleClient() {
         return (
             <ClientContainer key={id}>
-                 {/* {notification === true? 
-                <h1>
-                    <strong>Atualizar</strong>
-                </h1> : <></>} */}
                 <h2><strong>Nome: </strong>{name}</h2>
                 <h2><strong>Serviço: </strong>{service}</h2>
                 <h2><strong>Plano: </strong>{payment}</h2>
@@ -57,10 +53,10 @@ function ClientData(props) {
     function handleButtons() {
         return (
             <>
-                <IconWhatsApp id="notification"selected={notification} 
+                <IconWhatsApp id="whatsApp" selected={notification} 
                 onClick={() => sendWhatsAppMessage(name, daysLeft) }><RiWhatsappFill/></IconWhatsApp>
-                <IconDelete onClick={() => deleteClient(id)}><AiFillDelete/></IconDelete>
-                <IconUpdate onClick={() => navigate(`/update/${id}`)}><MdCreate/></IconUpdate>
+                <IconDelete id="delete" onClick={() => deleteClient(id)}><AiFillDelete/></IconDelete>
+                <IconUpdate id="update" onClick={() => navigate(`/update/${id}`)}><MdCreate/></IconUpdate>
             </>
         )
     }

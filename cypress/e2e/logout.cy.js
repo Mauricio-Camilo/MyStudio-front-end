@@ -8,13 +8,14 @@ beforeEach(() => {
 describe("main page suit test", () => {
     it("test for create a new client", () => {
 
-        const URL_FRONT = "http://localhost:3000";
-        const URL_SERVER = "http://localhost:5000";
+        const URL_FRONT = "https://projeto22-mystudio-front.vercel.app";
+        const URL_SERVER = "https://mauricio-mystudio.herokuapp.com";
 
         const login = {
             cpf: "000.000.000-00",
             password: "password",
         }
+        
         cy.visit(`${URL_FRONT}/`);
         cy.get("#login").type(login.cpf);
         cy.get("#password").type(login.password);
@@ -23,8 +24,8 @@ describe("main page suit test", () => {
         cy.wait("@signin");
         cy.url().should("equal", `${URL_FRONT}/main`);
 
-        cy.wait(2000);
-        cy.contains("Logout").click();
+        cy.wait(1000);
+        cy.get("#logout").click();
         cy.url().should("equal", `${URL_FRONT}/`);
     })
 })

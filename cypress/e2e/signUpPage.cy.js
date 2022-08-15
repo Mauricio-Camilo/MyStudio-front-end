@@ -6,9 +6,7 @@ beforeEach(() => {
 
 describe("main page suit test", () => {
     it("test for make signup and login", () => {
-
-        const URL_FRONT = "http://localhost:3000";
-        // const URL_SERVER = "http://localhost:5000";
+        const URL_FRONT = "https://projeto22-mystudio-front.vercel.app";
         const URL_SERVER = "https://mauricio-mystudio.herokuapp.com" 
 
         const instructor = {
