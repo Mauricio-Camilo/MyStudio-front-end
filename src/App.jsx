@@ -7,6 +7,8 @@ import Main from "./pages/Main";
 import Historic from "./pages/Historic";
 import InsertClientPage from "./pages/Insert";
 import UpdateClientPage from "./pages/Update";
+import Card from "./pages/Card";
+
 
 import GlobalStyle from "./styles/globalStyle.jsx";
 import { UserProvider } from "./contexts/userContext";
@@ -40,6 +42,9 @@ function App() {
                             <PrivateRoute>
                                 <UpdateClientPage />
                             </PrivateRoute>
+                        }/>
+                           <Route path="/card" element={
+                            <Card />
                         }/>
                     </Routes>
                 </BrowserRouter>

@@ -63,8 +63,10 @@ strong {
   --height-header-mobile: 50px;
   --height-header-desktop: 70px;
 
+  --sidebar-width: 80px;
+
   --container-margin-top: -25px;
-  --container-background: white;
+  --container-background: #99EBDC;
 
   --main-title-size: 32px;
   --title-margin-top: 25px;
@@ -72,7 +74,7 @@ strong {
   --title-font-color: #000000;
 
   --subcontainer-width: 350px;
-  --subcontainer-max-width: 700px;
+  --subcontainer-max-width: 950px;
   --subcontainer-border: 3px solid blue;
   --subcontainer-div-gap: 10px;
   --subcontainer-font-size: 20px;

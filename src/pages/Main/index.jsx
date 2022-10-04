@@ -1,6 +1,7 @@
 import { useContext, useState, useEffect } from "react";
 import { UserContext } from "../../contexts/userContext";
 import Header from "../../components/Header";
+import SideBar from "../../components/SideBar";
 import Footer from "./../../components/Footer";
 import { Container, Title } from "./style";
 import { getAllClients } from "../../services/api";
@@ -65,6 +66,7 @@ function MainPage() {
         return (
             <>
                 <Header />
+                <SideBar />
                 <Container>
                     <Title>Alunos cadastrados</Title>
                     {handleClients()}

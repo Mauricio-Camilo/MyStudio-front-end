@@ -7,18 +7,19 @@ const Container = styled.div`
     flex-direction: column;
     align-items: center;
     gap: 25px;
-    margin-top: var(--height-header-mobile);
     padding-bottom: 50px;
-    background: var(--container-background);
-
+    margin-top: var(--height-header-mobile);
+    background-color: var(--container-background);
+    
     @media (max-width: 450px) {
         margin-top: var(--height-header-mobile);
         margin-bottom: var(--height-header-mobile);
     }
-
+    
     @media (min-width: 450px) {
         margin-top: var(--height-header-desktop);
         margin-bottom: var(--height-header-desktop);
+        margin-left: var(--sidebar-width);
     }
 `
 const Title = styled.h1`

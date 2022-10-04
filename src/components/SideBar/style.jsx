@@ -1,43 +1,51 @@
 import styled from "styled-components";
 
 const Container = styled.div`
-    width: 100%;
-    height: var(--height-header-mobile);
+    width: var(--sidebar-width);
+    height: 100%;
     display: flex;
-    /* justify-content: center; */
+    justify-content: center;
     background-color: #4fea17;
     position: fixed;
     top: 0;
+    left: 0;
     z-index: 5;
-    
+
     @media (max-width: 450px) {
-        height: var(--height-header-mobile);
+        display: none;
     }
-    
-    @media (min-width: 450px) {
+
+    /* @media (min-width: 450px) {
         height: var(--height-header-desktop);
-        left: var(--sidebar-width);
-        right: var(--sidebar-width);
-    }
+    } */
 `
 
 const SubContainer = styled.div`
-    /* min-width: var(--subcontainer-width); */
-    /* max-width: var(--subcontainer-max-width); */
-    width: 100%;
+    /* min-width: var(--subcontainer-width);
+    max-width: var(--subcontainer-max-width);
+    width: 80%; */
+    display: flex; 
+    flex-direction: column;
+    gap: 50px;
+    margin-top: 100px;
+`
+const IconContainer = styled.div`
     display: flex;
-    justify-content: space-between;
-    align-items: center;     
-    background-color: red;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    h5 {
+        font-size: 12px;
+        margin-top: 5px;
+    }
 `
 const Icon = styled.p`
     font-size: var(--icon-size-mobile);
-    margin-right: 20px;
     cursor: pointer;
-    
+
     @media (min-width: 450px) {
         font-size: var(--icon-size-desktop);
-        margin-right: 120px;
     }
 `
 const Logo = styled.img`
@@ -52,6 +60,7 @@ const Logo = styled.img`
 export {
     Container,
     SubContainer,
+    IconContainer,
     Logo,
     Icon
 }

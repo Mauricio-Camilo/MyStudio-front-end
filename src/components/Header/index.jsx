@@ -19,7 +19,6 @@ function Header() {
     return (
         <Container>
             <SubContainer>
-                <Icon id="creation" onClick={() => navigate("/insert")}><GrAddCircle /></Icon>
                 <Logo src={logo}></Logo>
                 <Icon id="logout" onClick={() => logout()}><GrLogout /></Icon>
             </SubContainer>
