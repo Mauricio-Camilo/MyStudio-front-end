@@ -60,7 +60,7 @@ strong {
   --color-3: green;
 
   --width-mobile: 375px;
-  --height-header-mobile: 50px;
+  --height-header-mobile: 60px;
   --height-header-desktop: 70px;
 
   --sidebar-width: 80px;

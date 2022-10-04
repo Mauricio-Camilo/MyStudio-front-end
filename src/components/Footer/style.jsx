@@ -6,9 +6,10 @@ const Container = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: var(--button-color);
+    /* background-color: var(--button-color); */
+    background-color: red;
     position: fixed;
-    bottom: 0;
+    top: 0;
     left: 0;
     z-index: 5;
 
@@ -28,8 +29,18 @@ const SubContainer = styled.div`
     justify-content: space-between;
     align-items: center;
 `
+const Logo = styled.img`
+     max-width: var(--logo-header-mobile);
+     padding-top: var(--logo-header-top);
+
+     @media (min-width: 450px) {
+        max-width: var(--logo-header-desktop);
+        padding-top: 20px;
+    }
+`
 const Icon = styled.p`
      font-size: var(--icon-size-mobile);
+     margin-left: 30px;
      cursor: pointer;
 
 @media (min-width: 450px) {
@@ -117,6 +128,7 @@ const Services = styled.div`
 export {
     Container,
     SubContainer,
+    Logo,
     SearchBar,
     Services,
     Icon,

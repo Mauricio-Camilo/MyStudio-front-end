@@ -3,11 +3,9 @@ import styled from "styled-components";
 const Container = styled.div`
     width: 100%;
     height: var(--height-header-mobile);
-    display: flex;
-    /* justify-content: center; */
     background-color: #4fea17;
     position: fixed;
-    top: 0;
+    bottom: 0;
     z-index: 5;
     
     @media (max-width: 450px) {
@@ -15,29 +13,32 @@ const Container = styled.div`
     }
     
     @media (min-width: 450px) {
+        display: none;
         height: var(--height-header-desktop);
-        left: var(--sidebar-width);
-        right: var(--sidebar-width);
     }
 `
 
 const SubContainer = styled.div`
-    /* min-width: var(--subcontainer-width); */
-    /* max-width: var(--subcontainer-max-width); */
-    width: 100%;
+    height: 100%;
     display: flex;
     justify-content: space-between;
-    align-items: center;     
-    background-color: red;
+    align-items: center;
+    margin: 0 25px;
 `
 const Icon = styled.p`
     font-size: var(--icon-size-mobile);
-    margin-right: 20px;
+    padding-top: 5px;
     cursor: pointer;
-    
-    @media (min-width: 450px) {
-        font-size: var(--icon-size-desktop);
-        margin-right: 120px;
+`
+const IconContainer = styled.div`
+    width: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center; 
+
+    h5 {
+        font-size: 12px;
     }
 `
 const Logo = styled.img`
@@ -49,9 +50,11 @@ const Logo = styled.img`
         padding-top: 20px;
     }
 `
+
 export {
     Container,
     SubContainer,
+    IconContainer,
     Logo,
-    Icon
+    Icon,
 }

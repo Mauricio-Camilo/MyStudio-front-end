@@ -1,7 +1,9 @@
 import { useNavigate } from "react-router-dom";
 import { useContext, useState } from "react";
 import { UserContext } from "../../contexts/userContext";
-import { Container, SubContainer, Icon, SearchBar, Services, SearchIcon } from "./style";
+import { Container, SubContainer, Logo, Icon, SearchBar, Services, SearchIcon } from "./style";
+import logo from "./../../assets/logo_semnome.svg";
+import { GrLogout } from "react-icons/gr";
 import { IoHourglassOutline } from "react-icons/io5";
 import { ImHome } from "react-icons/im";
 import { BiChevronUpCircle } from "react-icons/bi";
@@ -16,6 +18,14 @@ function Footer() {
 
      const {filter, setFilter} = useContext(UserContext);
 
+     function logout() {
+        const checkLogout = window.confirm("Deseja mesmo sair?")
+        if (checkLogout) {
+            localStorage.removeItem("token");
+            navigate("/");
+        }
+    }
+
      function activateSelectedService (service) {
         setVisible(false);
         setFilter(service);
@@ -24,7 +34,7 @@ function Footer() {
     return (
         <Container>
             <SubContainer>
-            <Icon id="main" onClick={() => navigate("/main")}><ImHome/></Icon>
+            <Logo src={logo}></Logo>
             <SearchBar>
                 <h3>{filter}</h3>
                 <SearchIcon id="search" onClick={() => setVisible(!visible)}><BiChevronUpCircle/></SearchIcon>
@@ -36,7 +46,7 @@ function Footer() {
                     })}
                 </Services>
             </SearchBar>
-            <Icon id="historic" onClick={() => navigate("/historic")}><IoHourglassOutline/></Icon>
+            <Icon id="logout" onClick={() => logout()}><GrLogout /></Icon>
             </SubContainer>
         </Container>
     )
