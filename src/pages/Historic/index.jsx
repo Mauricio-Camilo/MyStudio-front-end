@@ -1,6 +1,7 @@
 import { useContext, useState, useEffect } from "react";
 import { UserContext } from "../../contexts/userContext";
 import Header from "../../components/Header";
+import SideBar from "../../components/SideBar";
 import Footer from "./../../components/Footer";
 import { Container, Title } from "./../Main/style";
 import { getAllClients } from "../../services/api";
@@ -66,6 +67,7 @@ function HistoricPage() {
     return (
         <>
             <Header />
+            <SideBar />
             <Container>
                 <Title>Histórico</Title>
                 {handleClients()}

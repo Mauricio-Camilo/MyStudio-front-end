@@ -1,31 +1,26 @@
 import { useNavigate } from "react-router-dom";
-import { Container, SubContainer, IconContainer, Logo, Icon, SearchBar, Services, SearchIcon } from "./style";
-import { GrLogout } from "react-icons/gr";
-import { GrAddCircle } from "react-icons/gr";
-import { IoHourglassOutline } from "react-icons/io5";
-import { ImHome } from "react-icons/im";
-import { BiChevronUpCircle } from "react-icons/bi";
-import logo from "./../../assets/logo_semnome.svg";
 import { useContext, useState } from "react";
 import { UserContext } from "../../contexts/userContext";
+import { Container, SubContainer, Logo, Icon, SearchBar, Services, SearchIcon } from "./style";
+import logo from "./../../assets/logo_semnome.svg";
+import { GrLogout } from "react-icons/gr";
+import { IoHourglassOutline } from "react-icons/io5";
+import { ImHome } from "react-icons/im";
+import { BiChevronDownCircle } from "react-icons/bi";
 
 function Header() {
 
-    const navigate = useNavigate();
+     const navigate = useNavigate();
 
-    const [visible, setVisible] = useState(false);
+     const [visible, setVisible] = useState(false);
 
-    const services = ["Todos", "Pilates", "Fisioterapia", "Barras", "Osteopatia"]
+     const services = ["Todos", "Pilates","Fisioterapia","Barras","Osteopatia" ]
+    //  const services = ["Todos"]
 
-    const { filter, setFilter } = useContext(UserContext);
 
-    function activateSelectedService(service) {
-        console.log("fui clicado");
-        setVisible(false);
-        setFilter(service);
-    }
+     const {filter, setFilter} = useContext(UserContext);
 
-    function logout() {
+     function logout() {
         const checkLogout = window.confirm("Deseja mesmo sair?")
         if (checkLogout) {
             localStorage.removeItem("token");
@@ -33,21 +28,27 @@ function Header() {
         }
     }
 
+     function activateSelectedService (service) {
+        setVisible(false);
+        setFilter(service);
+     }
+
     return (
         <Container>
             <SubContainer>
-                <IconContainer>
-                    <Icon id="main" onClick={() => navigate("/main")}><ImHome /></Icon>
-                    <h5>Início</h5>
-                </IconContainer>
-                <IconContainer>
-                    <Icon id="historic" onClick={() => navigate("/historic")}><IoHourglassOutline /></Icon>
-                    <h5>Histórico</h5>
-                </IconContainer>
-                <IconContainer>
-                    <Icon id="creation" onClick={() => navigate("/insert")}><GrAddCircle /></Icon>
-                    <h5>Adicionar</h5>
-                </IconContainer>
+            <Logo src={logo}></Logo>
+            <SearchBar>
+                <h3>{filter}</h3>
+                <SearchIcon id="search" onClick={() => setVisible(!visible)}><BiChevronDownCircle/></SearchIcon>
+                <Services visible={visible}>
+                    {services.map(service => {
+                        return (
+                            <p key={service} onClick={() => activateSelectedService(service)}>{service}</p>
+                        )
+                    })}
+                </Services>
+            </SearchBar>
+            <Icon id="logout" onClick={() => logout()}><GrLogout /></Icon>
             </SubContainer>
         </Container>
     )

@@ -16,6 +16,7 @@ const Container = styled.div`
     @media (min-width: 450px) {
         margin-top: var(--height-header-desktop);
         margin-bottom: var(--height-header-desktop);
+        margin-left: var(--sidebar-width);
     }
 `
 const Title = styled.h1`

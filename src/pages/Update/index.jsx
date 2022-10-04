@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Header from "../../components/Header";
+import SideBar from "../../components/SideBar";
 import Footer from "../../components/Footer";
 import { useNavigate, useParams } from "react-router-dom";
 import { updateClientById } from "../../services/api";
@@ -123,6 +124,7 @@ function UpdateClientPage() {
     return (
         <>
             <Header />
+            <SideBar /> 
             <Container>
                 <Title>Atualize os dados do aluno</Title>
                 {handleInputs()}

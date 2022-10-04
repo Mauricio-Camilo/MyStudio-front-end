@@ -54,10 +54,8 @@ strong {
 * {
   box-sizing: border-box;
 
-  --color-0: white;
-  --color-1: blue;
-  --color-2: red;
-  --color-3: green;
+  --color-0: #99EBDC;
+  --color-1: #4fea17;
 
   --width-mobile: 375px;
   --height-header-mobile: 60px;
@@ -67,6 +65,8 @@ strong {
 
   --container-margin-top: -25px;
   --container-background: #99EBDC;
+  /* --container-background: white; */
+
 
   --main-title-size: 32px;
   --title-margin-top: 25px;

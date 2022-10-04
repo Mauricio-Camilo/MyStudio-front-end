@@ -1,6 +1,7 @@
 import { useContext, useState } from "react";
 import { UserContext } from "../../contexts/userContext";
 import Header from "../../components/Header";
+import SideBar from "../../components/SideBar";
 import Footer from "../../components/Footer";
 import { useNavigate } from "react-router-dom";
 import { postClient } from "../../services/api";
@@ -136,6 +137,7 @@ function InsertClientPage() {
     return (
         <>
             <Header />
+            <SideBar />
             <Container>
                 <Title>Cadastre seu novo aluno</Title>
                 {handleInputs()}
