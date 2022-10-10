@@ -30,7 +30,7 @@ function HistoricPage() {
         async function getUserPostsById() {
             try {
                 const clients = await getAllClients(config);
-                setClients(clients.data);
+                setClients(clients.data.reverse());
                 setPostClients(false);
                 if (clients.data.length !== 0) {
                     setReloadPage(true);
