@@ -35,8 +35,12 @@ function Login () {
             navigate("/main");
         }
 
-        catch {
-            alert("Preencha os dados corretamente");
+        catch (error) {
+            const { response } = error;
+            if (response.status === 422) alert("Preencha os dados corretamente");
+            else {
+                alert(response.data); 
+            }
             setLogin("Entrar");
         }
     }

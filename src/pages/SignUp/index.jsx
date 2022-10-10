@@ -35,7 +35,8 @@ function SignUp() {
             navigate("/")
         }
 
-        catch {
+        catch (error) {
+            console.log(error);
             alert("Preencha os dados corretamente");
             setSignUp("Cadastrar");
         }
@@ -49,10 +50,10 @@ function SignUp() {
                     <Input id="name" type="text" placeholder="Nome" required
                         onChange={(e) => setName(e.target.value)} value={name}>
                     </Input>
-                    <Input id="cpf" type="text" placeholder="CPF" required
+                    <Input id="cpf" type="text" placeholder="CPF (XXX.XXX.XXX-XX)" required
                         onChange={(e) => setCpf(e.target.value)} value={cpf}>
                     </Input>
-                    <Input id="password" type="password" placeholder="Senha" required
+                    <Input id="password" type="password" placeholder="Senha (mínimo 7 digitos)" required
                         onChange={(e) => setPassword(e.target.value)} value={password}>
                     </Input>
                     <Input id="confirmpassword" type="password" placeholder="Confirme a senha" required

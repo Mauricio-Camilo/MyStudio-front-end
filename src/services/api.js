@@ -1,8 +1,8 @@
 import axios from "axios";
 
 export const api = axios.create({
-    baseURL: "https://mauricio-mystudio.herokuapp.com" 
-    // baseURL: "http://localhost:5000"
+    // baseURL: "https://mauricio-mystudio.herokuapp.com" 
+    baseURL: "http://localhost:5000"
   });
 
   export const makeSignUp = async (formData) => {
@@ -28,6 +28,5 @@ export const api = axios.create({
   }
 
   export const updateClientById = async (formData, id) => {
-    console.log(formData);
     await api.put(`/clients/${id}`,formData)
   }
