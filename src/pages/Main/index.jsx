@@ -52,7 +52,7 @@ function MainPage() {
                     const { id, name, payments, services, startDate, finishDate, notification, daysLeft } = client;
                     if ((services.name === filter || filter === "Todos") && daysLeft > daysLeftFilter) {
                         return (
-                            <ClientData id="client" key={id} id={id} name={name} startDate={startDate} service={services.name}
+                            <ClientData id="client" key={id} name={name} startDate={startDate} service={services.name}
                                 finishDate={finishDate} payment={payments.period}
                                 notification={notification} daysLeft={daysLeft} />
                         )

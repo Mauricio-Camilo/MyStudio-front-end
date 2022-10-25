@@ -7,13 +7,13 @@ import { AiFillDelete } from "react-icons/ai";
 
 function ClientData(props) {
 
-    const { id, name, startDate, service, finishDate, payment, notification, daysLeft } = props;
+    const { key, name, startDate, service, finishDate, payment, notification, daysLeft } = props;
 
     const navigate = useNavigate();
 
     function handleClient() {
         return (
-            <ClientContainer key={id}>
+            <ClientContainer key={key}>
                 <h2><strong>Nome: </strong>{name}</h2>
                 <h2><strong>Serviço: </strong>{service}</h2>
                 <h2><strong>Plano: </strong>{payment}</h2>
